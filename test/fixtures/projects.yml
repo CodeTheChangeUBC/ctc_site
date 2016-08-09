@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  startDate: 2016-08-09 16:57:49
+  endDate: 2016-08-09 16:57:49
+  volCap: 1
+  volNum: 1
+  githubPage: MyString
+
+two:
+  title: MyString
+  startDate: 2016-08-09 16:57:49
+  endDate: 2016-08-09 16:57:49
+  volCap: 1
+  volNum: 1
+  githubPage: MyString

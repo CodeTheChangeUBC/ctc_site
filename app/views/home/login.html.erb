@@ -1,0 +1,17 @@
+<h1>CTC Login</h1>
+<p>Future Login Page<p>
+
+<%= form_for :home, url: login do |f| %>
+    <p>
+        <%= f.label :user %><br>
+        <%= f.text_field :user %><br>
+    </p>
+    <p>
+        <%= f.label :password %><br>
+        <%= f.text_field :password %><br>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+
