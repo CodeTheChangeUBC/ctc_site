@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstName: MyString
+  lastName: MyString
+  studentNumber: 1
+
+two:
+  firstName: MyString
+  lastName: MyString
+  studentNumber: 1

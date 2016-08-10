@@ -1,18 +1,29 @@
 Rails.application.routes.draw do
 
+
     root 'home#index'
     get 'login' => 'home#login'
     get 'subscribe' => 'home#subscribe'
     get 'about' => 'home#about'
 
-    resources :project, :members, :exercises
+    resources :project, :member #, :exercises
 
-  #get 'project/create'
+ # get 'project/new'
+ # get 'project/create'
 
-  #get 'project/edit'
+ # get 'project/edit'
 
-  #get 'project/delete'
+ # get 'project/delete'
 
+ # get 'member/new'
+
+ # get 'member/create'
+
+ # get 'member/show'
+
+ # get 'member/edit'
+
+ # get 'member/delete'
     
 end
 
