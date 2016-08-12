@@ -13,6 +13,10 @@ class MemberController < ApplicationController
       @member = Member.find(params[:id])
   end
 
+  def index
+      @members = Member.all
+  end
+
   def edit
   end
 

@@ -1,0 +1,79 @@
+<!-- Global Header -->
+<!-- Strongly influenced by Ben Chugg's FtC header -->
+
+<div class="global_header">
+	<header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- TODO: add image link-->
+
+      	  <%#= link_to image_tag("ubcftc_logo", alt: "UBC FtC", size: "95x45"), root_path, id: "logo", class: "navbar-brand" %>	 
+            </div>
+            <nav>
+                <div class="collapse navbar-collapse" id="HeaderNavbar">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><%= link_to "Home", root_path %></li>
+                        <li><%= link_to "About Us", about_path %></li>
+                        <li><%= link_to "Subscribe", about_path %></li>
+                        <li><%= link_to login_path do %>
+                            <span class="glyphicon glyphicon-user"></span>
+                            Login
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<!--
+<div class="container-fluid">
+      	<div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#HeaderNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+      	  <%#= link_to image_tag("ubcftc_logo", alt: "UBC FtC", size: "95x45"), root_path, id: "logo", class: "navbar-brand" %>	 
+      	</div>
+        <nav>
+         <div class="collapse navbar-collapse" id="HeaderNavbar">
+          <ul class="nav navbar-nav">
+          	<li><%#= link_to "Home",  root_path %></li>
+            <li><%#= link_to "Who we are",   about_path %></li>
+            <li><%#= link_to "What we do",   what_we_do_path %></li>
+          	<%#= render 'layouts/events_dropdown' %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+           <!-- Change view if user is logged in -->
+           <%# if logged_in? %>
+            <%# if admin? %>
+              <li><%#= link_to "All Users", users_path %></li>
+              <%#= render 'layouts/admin_actions' %>
+            <%# else %>
+              <li><%#= link_to "The Team", users_path %></li>
+            <%# end %>
+            <%#= render 'layouts/account_dropdown' %>
+          <%# else %>
+              <li><%#= link_to "Get Involved",   get_involved_path %></li>
+              <li><%#= link_to "Contact Us",  contact_path %></li>
+              <li><%#= link_to login_path do %>
+                  <span class="glyphicon glyphicon-user"></span>
+                  Log in
+                <%# end %>
+              </li>
+          <%# end %>
+          </ul>
+         </div>
+        </nav>
+      </div>
+-->
