@@ -1,2 +1,52 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <title>CtC - UBC</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="scripts/js/boostrap.min.js"></script>
+    </head>
+    <body>
+<div class="jumbotron text-center">
+    <h1>
+        "Code the change you want to see in the world" - Unknown wise person
+    </h1>
+    <h2>
+        Welcome to the home of the UBC Chapter of Code the Change, a multinational organisation of passionate university students applying their software engineering prowess for social good.
+    </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <%= button_to "Our Projects", project_index_path, :method => "get" %>
+            </div>
+            <div class="col-sm-4">
+                <%= button_to "Get Involved", login_path, :method => "get" %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <p>About Us:</p>
+    <div class="row">
+        <!-- horizontal layout -->
+        <p>We:</p>
+        <div class="col-sm-4">
+            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+            <h3>Collaborate</h3>
+            <p>Seek out non-profit partners to assist technologically</p>
+        </div>
+        <div class="col-sm-4">
+            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+            <h3>Create</h3>
+            <p>Initiate our own Social Good Ventures</p>
+        </div>
+        <div class="col-sm-4">
+            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+            <h3>Compete</h3>
+            <p>Compete in Hackathons with a social good agenda</p>
+        </div>
+    </div>
+</div>
 <h1>CTC Home</h1>
 <p>This is the future homepage of the site</p>
