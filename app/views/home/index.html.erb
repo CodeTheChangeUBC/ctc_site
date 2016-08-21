@@ -8,45 +8,55 @@
         <script src="scripts/js/boostrap.min.js"></script>
     </head>
     <body>
-<div class="jumbotron text-center">
-    <h1>
-        "Code the change you want to see in the world" - Unknown wise person
-    </h1>
-    <h2>
-        Welcome to the home of the UBC Chapter of Code the Change, a multinational organisation of passionate university students applying their software engineering prowess for social good.
-    </h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <%= button_to "Our Projects", project_index_path, :method => "get", class: 'btn btn-primary' %>
-            </div>
-            <div class="col-sm-4">
-                <%= button_to "Get Involved", login_path, :method => "get", class: 'btn btn-primary' %>
+        <div class="jumbotron text-center">
+            <h1>Code the Change - UBC Chapter</h1>
+            <h2>
+                "Code the change you want to see in the world" - Unknown wise person
+            </h2>
+            <div class="btn-group btn-group-lg" role="group">
+                <div class="btn-group" role="group">
+                    <%= button_to "Our Projects", project_index_path, :method => "get", class: 'btn btn-primary btn-lg btn-block' %>
+                    <%= button_to "Get Involved", login_path, :method => "get", class: 'btn btn-block btn-primary btn-lg' %>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container">
-    <p>About Us:</p>
-    <div class="row">
-        <!-- horizontal layout -->
-        <p>We:</p>
-        <div class="col-sm-4">
-            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
-            <h3>Collaborate</h3>
-            <p>Seek out non-profit partners to assist technologically</p>
+        <div class="container">
+            <p>About Us:</p>
+            <div class="row">
+                <h2>
+                    Welcome to the home of the UBC Chapter of Code the Change, a multinational organisation of passionate university students applying their software engineering prowess for social good.
+                </h2>
+            </div>
+            <div class="row">
+                <!-- horizontal layout -->
+                <!-- TODO: Centre the elements -->
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Collaborate</h3>
+                    <p>Seek out non-profit partners to assist technologically</p>
+                </div>
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Create</h3>
+                    <p>Initiate our own Social Good Ventures</p>
+                </div>
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Compete</h3>
+                    <p>Compete in Hackathons with a social good agenda</p>
+                </div>
+            </div>
+            <div class="row">
+                <%= button_to "More", project_index_path, :method => "get", class: 'btn btn-primary btn-lg btn-block' %>
+            </div>
         </div>
-        <div class="col-sm-4">
-            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
-            <h3>Create</h3>
-            <p>Initiate our own Social Good Ventures</p>
+        <div class="jumbotron">
+            <p>Our Projects</p>
         </div>
-        <div class="col-sm-4">
-            <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
-            <h3>Compete</h3>
-            <p>Compete in Hackathons with a social good agenda</p>
+        <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+                <%= button_to "Get Involved", login_path, :method => "get", class: 'btn btn-primary btn-lg' %>
+            </div>
         </div>
-    </div>
-</div>
-<h1>CTC Home</h1>
-<p>This is the future homepage of the site</p>
+    </body>
+</html>
