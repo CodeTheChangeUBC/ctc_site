@@ -15,6 +15,10 @@ class ProjectController < ApplicationController
         @project = Project.find(params[:id])
     end
 
+    def index
+        @projects = Project.all
+    end
+
     def edit
     end
 
