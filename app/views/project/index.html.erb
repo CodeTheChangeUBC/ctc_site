@@ -1,21 +1,19 @@
 <div class="jumbotron">
     <h1> Listing All Projects </h1>
-    <table>
+    <table class="table">
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Student Number</th>
+            <th>Title</th>
+            <th>Github Page</th>
         </tr>
 
         <% @projects.each do |project| %>
             <tr>
-                <td><%= project.firstName %></td>
-                <td><%= project.lastName %></td>
-                <td><%= project.studentNumber %></td>
+                <td><%= project.title %></td>
+                <td><%= project.githubPage %></td>
                 <td><%= link_to 'Show', project_index_path(project) %></td>
             </tr>
         <% end %>
     </table>
 
-    <%= link_to 'New Project', new_project_path %>
+    <%= button_to 'New Project', new_project_path, :method => "get", class: 'btn' %>
 </div>
