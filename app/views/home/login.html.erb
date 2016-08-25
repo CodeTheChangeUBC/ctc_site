@@ -1,18 +1,21 @@
-<h1>CTC Login</h1>
-<p>Future Login Page<p>
+<div class="jumbotron">
+    <h1>CTC Login</h1>
+    <p>Future Login Page<p>
 
-<%= form_for :home, url: member do |f| %>
-    <p>
+    <%= form_for :home do |f| %>
+        <p>
         <%= f.label :user %><br>
         <%= f.text_field :user %><br>
-    </p>
-    <p>
+        </p>
+        <p>
         <%= f.label :password %><br>
         <%= f.text_field :password %><br>
-    </p>
-    <p>
+        </p>
+        <p>
         <%= f.submit %>
-    </p>
-<% end %>
+        </p>
+    <% end %>
 
-<p>Not a member yet?</p><% button_to "Sign Up!", new_member_path, :method => "get", class: "btn btn-primary btn-lg" %> 
+    <p>Not a member yet?</p>
+    <% button_to "Sign Up!", new_member_path, :method => "get", class: "btn btn-primary btn-lg" %> 
+</div>
