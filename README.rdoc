@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi and welcome to the UBC Chapter of Code the Change's website project page. It is written in ruby on rails with PostgreSQL database support. See the Gemfile for a complete listing of modules.
 
-Things you may want to cover:
+Some notes:
 
-* Ruby version
+* Ruby version: 2.0.0
 
-* System dependencies
+* Deployment instructions: Heroku auto-deploys from production branch. Ensure this branch is always stable!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
