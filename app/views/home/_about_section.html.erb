@@ -1,0 +1,31 @@
+<div class="jumbotron" id="about_section">
+            <h1>About Us:</h1>
+            <div class="row">
+                <h2>
+                    Welcome to the home of the UBC Chapter of Code the Change, an organisation of passionate university students applying their software engineering prowess for social good.
+                </h2>
+            </div>
+            <div class="row">
+                <!-- horizontal layout -->
+                <!-- TODO: Centre the elements -->
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Collaborate</h3>
+                    <p>Seek out non-profit partners to assist technologically</p>
+                </div>
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Create</h3>
+                    <p>Initiate our own Social Good Ventures</p>
+                </div>
+                <div class="col-sm-4">
+                    <%= image_tag("insta_mp_sledding.jpg", :alt => "Placeholder Image", size: "300x300") %>
+                    <h3>Compete</h3>
+                    <p>Compete in Hackathons with a social good agenda</p>
+                </div>
+            </div>
+            <div class="row">
+                <%= button_to "More", about_path, :method => "get", class: 'btn btn-primary btn-lg btn-block' %>
+            </div>
+        </div>
+        
