@@ -1,1 +1,18 @@
-Footer
+<footer class="container col-sm-12">
+	<div class="container-fluid footer">
+		<div class="col-sm-4 connect">
+			<p>Connect with us:
+			<%= link_to image_tag("facebook_small", size: "30x30"), "https://facebook.com/codethechangeubc" %>
+			<%= link_to image_tag("linkedin_small", size: "30x30"), '#' %>
+			<%= link_to image_tag("github_small", size: "30x30"), 'https://github.com/CodeTheChangeUBC' %></p>
+		</div>
+		<div class="col-sm-4 center copyright">
+			<p>&copy; <%= Time.now.year %>, Code the Change - UBC Chapter</p>
+		</div>
+		<div class="col-sm-4 links">
+			<p><%= link_to "Contact Us", '#' %> |
+				<%= link_to "Parent Organization", 'https://codethechange.org' %>
+			</p>
+		</div>
+	</div>
+</footer>

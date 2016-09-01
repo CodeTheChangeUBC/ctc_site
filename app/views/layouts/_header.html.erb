@@ -10,16 +10,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="container-fluid">
-                        <%= link_to image_tag("ubc-code-the-change-logo.png", alt: "UBC FtC", size: "50x50"), root_path, id: "logo", class: "navbar-brand" %>	 
-                    </div>
+                    <%= link_to image_tag("ctc", alt: "Code the Change UBC", size: "105x50"), root_path, id: "logo", class: "navbar-brand" %>	 
                 </div>
                 <div class="collapse navbar-collapse" id="headerNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><%= link_to 'Home', root_path %></li>
                         <li><a href="#about_section">About</a></li>
                         <li><a href="#projects_section">Projects</a></li>
-                        <li><a href="#subscribe_section">Subscribe</a></li>
+                        <li><a href="#team_section">Team</a></li>
                         <li><%= link_to login_path do %>
                             <span class="glyphicon glyphicon-user"></span>
                             Login
