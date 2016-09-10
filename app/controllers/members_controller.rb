@@ -5,9 +5,9 @@ class MembersController < ApplicationController
   end
 
   def create
-      @member = Member.new(member_params)
-      @member.save
-      redirect_to @member
+    @member = Member.new(member_params)
+    @member.save
+    redirect_to @member
   end
 
   def show

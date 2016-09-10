@@ -12,7 +12,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/development_db
+  database: db/ctcdevelopment_db
   host: localhost
   username: ctc_site
   password:
@@ -22,7 +22,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test_db
+  database: db/ctctest_db
   host: localhost
   username: ctc_site
   password:

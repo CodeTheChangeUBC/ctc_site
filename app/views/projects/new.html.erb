@@ -1,19 +1,12 @@
-<div class="jumbotron">
-    <h1>New Project Page</h1>
-    <p>Find me in app/views/project/new.html.erb</p>
+<% provide(:title, 'New Project') %>
+<h2>New Project</h2>
 
-    <%= form_for @project do |f| %>
-        <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %><br>
-        </p>
-        <p>
-        <%= f.label 'Github Page' %><br>
-        <%= f.text_field :githubPage %><br>
-        </p>
-        <p>
-        <%= f.submit %>
-        </p>
-    <% end %>
-
+<div class="col-md-6 col-md-offset-3">
+<%= form_for(@project) do |f| %>
+  <%= f.text_field :title, placeholder: 'Title' %>
+  <%= f.text_field :githubPage, placeholder: 'Github URL' %>
+  <%= f.submit "Create this project!", class: "btn btn-primary" %>
+<% end %>
 </div>
+
+
