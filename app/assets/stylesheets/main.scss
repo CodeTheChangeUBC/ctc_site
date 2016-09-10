@@ -22,6 +22,13 @@ $ftc_green: #89C35A;
 $ubc_blue: #1F3961;
 $rich_green: #00cc00;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
 
 /* ============================================
 ============== UNIVERSAL ======================
@@ -40,6 +47,16 @@ body {
 	padding-top: 50px;
 	background-color: white;
 }
+
+/* For debug environment */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 
 
 /* ============================================

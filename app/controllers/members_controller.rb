@@ -1,5 +1,7 @@
-class MemberController < ApplicationController
+class MembersController < ApplicationController
+  
   def new
+    @member = Member.new
   end
 
   def create
@@ -22,9 +24,10 @@ class MemberController < ApplicationController
 
   def delete
   end
-end
 
-private
-    def member_params
-        params.require(:member).permit(:firstName, :lastName, :studentNumber)
-    end
+  private
+
+      def member_params
+          params.require(:member).permit(:firstName, :lastName, :studentNumber)
+      end
+end

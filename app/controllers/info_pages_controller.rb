@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class InfoPagesController < ApplicationController
   def index
   end
   def login

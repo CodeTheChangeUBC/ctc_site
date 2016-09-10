@@ -2,7 +2,7 @@
     <h1>New Project Page</h1>
     <p>Find me in app/views/project/new.html.erb</p>
 
-    <%= form_for :project, url: project_index_path do |f| %>
+    <%= form_for @project do |f| %>
         <p>
         <%= f.label :title %><br>
         <%= f.text_field :title %><br>

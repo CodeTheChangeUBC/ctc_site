@@ -1,30 +1,10 @@
 Rails.application.routes.draw do
-
-
-    root 'home#index'
-    get 'login' => 'home#login'
-    get 'subscribe' => 'home#subscribe'
-    get 'about' => 'home#about'
-
-    resources :project, :member #, :exercises
-
- # get 'project/new'
- # get 'project/create'
-
- # get 'project/edit'
-
- # get 'project/delete'
-
- # get 'member/new'
-
- # get 'member/create'
-
- # get 'member/show'
-
- # get 'member/edit'
-
- # get 'member/delete'
-    
+  root 'info_pages#index'
+  get 'login' => 'info_pages#login'
+  get 'subscribe' => 'info_pages#subscribe'
+  get 'about' => 'info_pages#about'
+  resources :projects
+  resources :members    
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
