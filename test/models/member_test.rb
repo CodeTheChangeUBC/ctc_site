@@ -11,11 +11,13 @@ class MemberTest < ActiveSupport::TestCase
   	assert @member.valid?
   end
 
+  test "should be valid without last name" do
+    @member.lastName = ""
+    assert @member.valid?
+  end
+
   test "name should be present" do
   	@member.firstName = "    "
-  	assert_not @member.valid?
-  	@member.firstName = "example"
-  	@member.lastName = ""
   	assert_not @member.valid?
   end
 
@@ -24,10 +26,16 @@ class MemberTest < ActiveSupport::TestCase
     assert_not @member.valid?
   end
 
-  test "name should not be too long" do
+  test "first name should not be too long" do
     @member.firstName = "a" * 51
     assert_not @member.valid?
   end
+
+  test "last name should not be too long" do
+    @member.lastName = "a" * 51
+    assert_not @member.valid?
+  end
+
 
   test "email should not be too long" do
     @member.email = "a" * 244 + "@example.com"

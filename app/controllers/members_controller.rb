@@ -6,8 +6,12 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    @member.save
-    redirect_to @member
+    if @member.save
+      redirect_to @member
+      flash[:success] = "Account Created!"
+    else
+      render :new
+    end
   end
 
   def show
@@ -28,6 +32,7 @@ class MembersController < ApplicationController
   private
 
       def member_params
-          params.require(:member).permit(:firstName, :lastName, :studentNumber)
+          params.require(:member).permit(:firstName, :lastName, :studentNumber, 
+                                          :email, :password, :password_confirmation)
       end
 end
