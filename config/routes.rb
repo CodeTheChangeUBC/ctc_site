@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root 'info_pages#index'
-  get 'login' => 'info_pages#login'
-  get 'subscribe' => 'info_pages#subscribe'
-  get 'about' => 'info_pages#about'
+  get '/subscribe',                 to: 'info_pages#subscribe'
+  get '/about',                     to: 'info_pages#about'
+  get    '/login',                  to: 'sessions#new'
+  post   '/login',                  to: 'sessions#create'
+  delete '/logout',                 to: 'sessions#destroy'
   resources :projects
   resources :members    
 end

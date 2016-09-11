@@ -14,25 +14,30 @@
                 </div>
                 <div class="collapse navbar-collapse" id="headerNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><%= link_to 'Home', root_path %></li>
-                        <li><a href="#about_section">About</a></li>
-                        <li><a href="#projects_section">Projects</a></li>
-                        <li><a href="#team_section">Team</a></li>
-                        <li><%= link_to login_path do %>
-                            <span class="glyphicon glyphicon-user"></span>
-                            Login
+                        <li><%= link_to "Home", root_path %></li>
+                        <% if request.path === "/" %>
+                            <li><a href="#about_section">About</a></li>
+                            <li><a href="#projects_section">Projects</a></li>
+                            <li><a href="#team_section">Team</a></li>
+                        <% end %>
+                        <% if logged_in? %>
+                            <li class="member-name"><%= link_to current_member.firstName, current_member %></li>
+                            <li><%= link_to logout_path do %>
+                                <span class="glyphicon glyphicon-user"></span>
+                                Logout
                             <% end %>
-                        </li>
+                            </li>
+                            
+                        <% else %>
+                            <li><%= link_to login_path do %>
+                                <span class="glyphicon glyphicon-user"></span>
+                                Login
+                            <% end %>
+                            </li>
+                        <% end %>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
 </div>
-
-<!--
-    TODO: swap the above local page links for the absolute links when not on the index
-                        <li><%#= link_to "Home", root_path %></li>
-                        <li><%#= link_to "About Us", about_path %></li>
-                        <li><%#= link_to "Subscribe", about_path %></li>
--->

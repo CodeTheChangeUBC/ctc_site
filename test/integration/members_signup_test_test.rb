@@ -23,5 +23,6 @@ class MemberssSignupTestTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'members/show'
+    assert is_logged_in?
   end
 end
