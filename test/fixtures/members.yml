@@ -5,12 +5,3 @@ tester:
   lastName: tester
   email: example@tester.com
   password_digest: <%= Member.digest('password') %>
-one:
-  firstName: MyString
-  lastName: MyString
-  studentNumber: 1
-
-two:
-  firstName: MyString
-  lastName: MyString
-  studentNumber: 1

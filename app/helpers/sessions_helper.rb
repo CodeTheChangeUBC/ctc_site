@@ -5,9 +5,24 @@ module SessionsHelper
 		session[:member_id] = member.id
 	end
 
+	# Remembers a member
+	def remember(member)
+		member.remember
+		cookies.permanent.signed[:member_id] = member.id
+		cookies.permanent[:remember_token] = member.remember_token
+	end
+
 	# Returns the current logged-in member (if any).
 	def current_member
-	    @current_member ||= Member.find_by(id: session[:member_id])
+		if (member_id = session[:member_id])
+			@current_member ||= Member.find_by(id: session[:member_id])
+		elsif (member_id = cookies.signed[:member_id])
+			member = Member.find_by(id: member_id)
+			if member && member.authenticated?(cookies[:remember_token])
+				log_in member
+				@current_member = member
+			end
+		end
 	end
 
 	# Returns true if the user is logged in, false otherwise.
@@ -17,7 +32,15 @@ module SessionsHelper
 
 	# Logs out the current member
 	def log_out
+		forget(current_member)
 		session.delete(:member_id)
 		@current_member = nil
+	end
+
+	# For a cookies session
+	def forget(member)
+		member.forget
+		cookies.delete(:member_id)
+		cookies.delete(:remember_token)
 	end
 end

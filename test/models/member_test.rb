@@ -84,4 +84,8 @@ class MemberTest < ActiveSupport::TestCase
     assert_not @member.valid?
   end
 
+  test "authenticated? should return false for a member with nil digest" do
+    assert_not @member.authenticated?('')
+  end
+
 end
