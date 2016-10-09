@@ -181,6 +181,7 @@ footer {
 		}
 	}
 }
+
 .login_page{
 	h1{
 	color: $ubc_blue;
@@ -217,33 +218,17 @@ footer {
 		font-family: typewriter;
 		font-size: 38px; 
 	}
-	h3{
+	h3 {
 	color:  #89C35A;
 		font-variant: small-caps;
 		font-size: 38px; 
 	}
-
 	.about-text {
 		padding-bottom: 20px;
-		font-family:Arial;
-		font-size: 26;
 	}
-	
-
 }
-.row{
-	margin-top: 30px;
-	margin-bottom: 30px;
-	background-color: white;
 
-}
-.pop{
-	background-color: #666699;}
-
-.pop2{
-	background-color: $ubc_blue;
-}
-.about-style1{
+.about-style1 {
 .col-sm-4 {
 		img {
 			border-radius: 50%;
