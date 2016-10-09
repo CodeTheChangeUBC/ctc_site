@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_action :logged_in_member, only: [:edit, :update]
+  before_action :correct_member,   only: [:edit, :update]
   
   def new
     @member = Member.new
