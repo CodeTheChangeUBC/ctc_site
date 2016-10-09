@@ -2,11 +2,15 @@
 <h2>New Project</h2>
 
 <div class="col-md-6 col-md-offset-3">
-<%= form_for(@project) do |f| %>
-  <%= f.text_field :title, placeholder: 'Title' %>
-  <%= f.text_field :githubPage, placeholder: 'Github URL' %>
-  <%= f.submit "Create this project!", class: "btn btn-primary" %>
-<% end %>
+    <%= form_for(@project) do |f| %>
+      <%= render 'shared/error_messages', object: @project %>
+      <%= f.text_field :title, placeholder: 'Title' %>
+      Please enter full URL (e.g. https://imawesome.com)
+      <%= f.text_field :githubPage, placeholder: 'Github URL' %>
+      <%= f.text_area :description, placeholder: 'Description' %>
+      <%= f.submit "Create this project!", class: "btn btn-primary" %>
+    <% end %>
 </div>
+
 
 

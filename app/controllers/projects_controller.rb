@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
     end
 
     def show
-        #render plain: params[:project].inspect
         @project = Project.find(params[:id])
     end
 
@@ -24,15 +23,28 @@ class ProjectsController < ApplicationController
     end
 
     def edit
+        @project = Project.find(params[:id])
     end
+
+    def update 
+      @project = Project.find(params[:id])
+      if @project.update_attributes(project_params)
+        flash[:success] = "Project Updated!"
+        redirect_to @project
+      else
+        render 'edit'
+      end
+    end
+
 
     def delete
     end
 
     private
         def project_params
-            #TODO: Add description
-            params.require(:project).permit(:title, :startDate, :endDate, :volCap, :volNum, :githubPage)
+            params.require(:project).permit(:title, :startDate, :endDate, 
+                                            :volCap, :volNum, :githubPage, 
+                                            :description)
         end
 
 end

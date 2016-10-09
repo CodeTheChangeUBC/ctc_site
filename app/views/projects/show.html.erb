@@ -1,15 +1,11 @@
 <div class="jumbotron">
-    <h1>Existing Project Page</h1>
-    <p>Find me in app/views/project/show.html.erb</p>
-
-    <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-    </p>
-
-    <p>
-    <strong>GithubPage:</strong>
-    <%= @project.githubPage %>
-    </p>
-    <%= button_to 'All Projects', project_index_path, :method => "get", class: 'btn-primary btn-lg' %>
+    <h1><%= @project.title %></h1>
 </div>
+<%= link_to "Edit Project", edit_project_path(@project) %>
+
+<p>
+    <%= @project.description %>
+</p>
+
+<p>You can see the software for the project <%= link_to "here", @project.githubPage %>
+</p>

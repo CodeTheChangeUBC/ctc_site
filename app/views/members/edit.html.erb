@@ -1,2 +1,14 @@
-<h1>Member#edit</h1>
-<p>Find me in app/views/member/edit.html.erb</p>
+<% provide(:title, 'Edit Profile') %>
+
+<div class="col-md-6 col-md-offset-3">
+    <%= form_for(@member) do |f| %>
+      <%= render 'shared/error_messages', object: @member %>
+      <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
+      <%= f.text_field :lastName, placeholder: 'Last Name' %>
+      <%= f.email_field :email, placeholder: 'Email (Required)' %>
+      <%= f.text_field :studentNumber, placeholder: 'Student ID Number' %>
+      <%= f.password_field :password, placeholder: 'Password (Required)' %>
+      <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
+      <%= f.submit "Edit Profile", class: "btn btn-primary" %>
+    <% end %>
+</div>
