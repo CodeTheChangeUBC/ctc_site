@@ -17,8 +17,6 @@
                         <li><%= link_to "Home", root_path %></li>
                         <% if request.path === "/" %>
                             <li><a href="#about_section">About</a></li>
-                            <li><a href="#projects_section">Projects</a></li>
-                            <li><a href="#team_section">Team</a></li>
                         <% end %>
                         <% if logged_in? %>
                             <li class="member-name"><%= link_to current_member.firstName, current_member %></li>
