@@ -2,6 +2,13 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
+# Make admin
+Member.create!(firstName: "Admin", 
+			   email: "admin@codethechangeubc.org", 
+			   password: "codethechange", 
+			   password_confirmation: "codethechange", 
+			   admin: true)
+
 # Seed fake projects and members if in development mode
 if Rails.env.development? 
 

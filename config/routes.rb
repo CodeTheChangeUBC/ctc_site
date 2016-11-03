@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get    '/login',                  to: 'sessions#new'
   post   '/login',                  to: 'sessions#create'
   delete '/logout',                 to: 'sessions#destroy'
+
+  # Action URLS 
+  get    '/home/make_exec',                  to: 'members#make_exec'
+  get    '/home/unmake_exec',                to: 'members#unmake_exec'
+  
   resources :projects
   resources :members    
 end

@@ -35,6 +35,12 @@ module SessionsHelper
 	    !current_member.nil?
 	end
 
+	# Confirms if current member is an admin
+    def admin? 
+      (logged_in? && current_member.admin?) ? true : false
+    end
+
+
 	# Logs out the current member
 	def log_out
 		forget(current_member)

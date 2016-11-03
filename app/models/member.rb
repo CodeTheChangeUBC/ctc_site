@@ -41,6 +41,17 @@ class Member < ActiveRecord::Base
 		update_attribute(:remember_digest, nil)
 	end
 
+	# Make this member an exec 
+	def make_exec
+		update_attribute(:exec, true)
+	end
+
+	# Remove this member as an exec
+	def unmake_exec
+		update_attribute(:exec, false)
+	end
+
+
     private 
 
 	    # Converts email to lowercase 
