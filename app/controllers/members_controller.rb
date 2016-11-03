@@ -18,7 +18,6 @@ class MembersController < ApplicationController
   end
 
   def show
-      #render plain: params[:member].inspect
       @member = Member.find(params[:id])
   end
 

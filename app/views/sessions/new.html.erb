@@ -3,6 +3,8 @@
     <h1>CtC Log in</h1>
 </div>
 
+<p><%= link_to "Sign up with GitHub", "/auth/github" %> </p>
+
 <div class="row center">
     <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
