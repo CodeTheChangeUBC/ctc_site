@@ -22,4 +22,5 @@ class ApplicationController < ActionController::Base
       @member = Member.find(params[:id])
       redirect_to(root_url) unless @member == current_member
     end
+
 end

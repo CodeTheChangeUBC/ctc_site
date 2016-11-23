@@ -24,6 +24,25 @@ class Member < ActiveRecord::Base
 		end
 	end
 
+	# Create with omniauth(auth)
+	def self.create_with_omniauth(auth)
+		# Split name into first and last
+		fullname = auth["info"]["name"].split(' ')
+		firstName = fullname[0]
+		lastName = fullname[fullname.size-1]
+		lastName = lastName == firstName ? "" : lastName
+		password = SecureRandom.urlsafe_base64
+		# Create member
+		Member.create!( provider: auth["provider"],
+						uid: auth["uid"],
+						firstName: fullname[0],
+						lastName: lastName,
+						email: auth["info"]["email"],
+						password: password,
+						password_confirmation: password
+		)
+	end
+
 	# Remembers a member in the database for persistent sessions
 	def remember
 		self.remember_token = Member.new_token
@@ -40,6 +59,17 @@ class Member < ActiveRecord::Base
 	def forget
 		update_attribute(:remember_digest, nil)
 	end
+
+	# Make this member an exec 
+	def make_exec
+		update_attribute(:exec, true)
+	end
+
+	# Remove this member as an exec
+	def unmake_exec
+		update_attribute(:exec, false)
+	end
+
 
     private 
 

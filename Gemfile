@@ -27,6 +27,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# Figaro gem for secure API and application information
+gem 'figaro'
+# Omniauth gem for authentication with GitHub
+gem 'omniauth-github'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

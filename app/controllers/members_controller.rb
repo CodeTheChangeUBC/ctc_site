@@ -18,7 +18,6 @@ class MembersController < ApplicationController
   end
 
   def show
-      #render plain: params[:member].inspect
       @member = Member.find(params[:id])
   end
 
@@ -43,6 +42,29 @@ class MembersController < ApplicationController
 
   def delete
   end
+
+  # Custom Actions 
+
+  def make_exec 
+    @member = Member.find(params[:member_id])
+    if @member.make_exec
+      flash[:success] = "#{@member.firstName} is now a club executive."
+    else
+      flash[:warning] = "Sorry, something went wrong."
+    end
+    redirect_back_or members_url
+  end
+
+  def unmake_exec
+    @member = Member.find(params[:member_id])
+    if @member.unmake_exec
+      flash[:info] = "#{@member.firstName} is no longer an executive."
+    else
+      flash[:warning] = "Sorry, something went wrong."
+    end
+    redirect_back_or members_url
+  end
+
 
   private
 
