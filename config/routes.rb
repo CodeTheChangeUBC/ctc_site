@@ -17,11 +17,6 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs', to: 
       'info_pages#letsencrypt'
   
-  #F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs before continuing: 
-  
-  
-  #F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c
-  
   resources :projects
   resources :members    
 end
