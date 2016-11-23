@@ -18,7 +18,7 @@
 ==============================================*/ 
 
 $light_gray: rgb(230,230,230);
-$ftc_green: #89C35A;
+$ctc_green: #89C35A;
 $ubc_blue: #1F3961;
 $rich_green: #00cc00;
 
@@ -93,6 +93,10 @@ input, textarea, select, .uneditable-input {
 	}
 	#logo {
 		float: left;
+	}
+	.container .navbar-header {
+		margin-left: 0;
+		margin-right: 0;
 	}
 	.navbar-nav li a:hover, 
 	.navbar-nav li a:focus {
@@ -171,13 +175,12 @@ footer {
 		padding-bottom: 30px;
 		color: gray;
 		.btn {
-
 			background-color: $ubc_blue;
-			border-collapse: $ubc_blue;
+			border-color: $ubc_blue;
 			color: white;
 			margin: 20px 20px 20px 30px;
 			&:hover {
-				color: black;
+				opacity: 0.4;
 			}
 		}
 	}
@@ -267,6 +270,68 @@ footer {
 		}
 	}
 }
+
+/* ============================================
+================== ABOUT PAGE =================
+==============================================*/ 
+
+.about-jumbotron {
+	background: image-url('code1.jpg');
+	background-size: cover;
+	height: 300px;
+	padding-left: 0;
+	padding-right: 0;
+	.fill {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255,255,255,0.6);
+		h2 {
+			padding-top: 10%;
+		}
+
+	}
+}
+
+.about-page {
+	padding-left: 0;
+	padding-right: 0;
+	.about_1 {
+		padding-top: 5%;
+		padding-bottom: 5%;
+		h2 {
+			color: $ubc_blue;
+		}
+	}
+	.about_2 {
+		padding-top: 5%;
+		padding-bottom: 5%;
+		background-color: $ubc_blue;
+		color: white;
+	}
+	.about_3 {
+		padding-top: 4%;
+		padding-bottom: 3%;
+		.tagline {
+			padding-bottom: 20px;
+			border-bottom: solid 2px $light_gray;
+			h3 {
+				padding-top: 10px;
+				color: gray;
+			}
+			img {
+				border-radius: 50%;
+			}
+		}
+		.col-sm-6 {
+			text-align: justify;
+			padding-top: 5%;
+			h2, h3 {
+				color: gray;
+			}
+		}
+	}
+}
+
 
 
 /* ============================================
