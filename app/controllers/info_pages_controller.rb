@@ -10,7 +10,7 @@ class InfoPagesController < ApplicationController
   def subscribe
   end
 
-  def lesencrypt
+  def letsencrypt
       render text: "F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
   end
 end
