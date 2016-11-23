@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get    '/home/unmake_exec',       to: 'members#unmake_exec'
 
   # SSL URL
-  get '/ http://codethechangeubc.org/.well-known/acme-challenge/:id', to: 
+  get '/.well-known/acme-challenge/:id', to: 
       'info_pages#letsencrypt'
   
   #F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs before continuing: 
