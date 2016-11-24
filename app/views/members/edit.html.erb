@@ -1,8 +1,15 @@
 <% provide(:title, 'Edit Profile') %>
 
 <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@member) do |f| %>
+
+    <%= form_for(@member, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: @member %>
+
+      <div class="center avatar">
+              <p><%= image_tag(@member.picture, size: "150x150") %></p>
+      </div>
+      <p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %></p>
+
       <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
       <%= f.text_field :lastName, placeholder: 'Last Name' %>
       <%= f.email_field :email, placeholder: 'Email (Required)' %>

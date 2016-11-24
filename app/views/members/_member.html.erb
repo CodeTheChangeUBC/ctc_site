@@ -1,16 +1,6 @@
-<!-- <div class="col-sm-3"> 
-    <div class="ih-item circle colored effect3 right_to_left"><a href="#">
-        <div class="img"><%= image_tag("1.jpg") %></div>
-        <div class="info">
-          <h3><%= member.firstName %></h3>
-          <h4>Exec or some title</h4>
-        </div>
-     </div>
-  </div>
- --> 
-
 <div class="col-sm-3">
 	<div id="box">
+    <%= image_tag member.picture %>
 	  	<div id="overlay">
 	  		<div class="info">
 	  			<h4><%= link_to member.firstName, member_path(member) %>, Developer</h4>
@@ -18,15 +8,3 @@
 	  	</div>
 	</div>
 </div>
-<!-- </div>
- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p> 
-					<a href="#">LINK HERE</a>
-				</p> 
-            </div>
-    </div>
-</div>  -->
