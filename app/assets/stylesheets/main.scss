@@ -336,7 +336,7 @@ footer {
 ==============================================*/ 
 
 .members {
-	margin-top: 30px;
+	margin-top: 50px;
 	.col-sm-3 {
 		padding-left: 0;
 		padding-right: 0;
@@ -361,6 +361,11 @@ footer {
 		color: white;
 		opacity: 0;
 		-webkit-transition: opacity .55s ease;
+		h4 {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
    }
 	#box:hover #overlay {
 		opacity: 1;
