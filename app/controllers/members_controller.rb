@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
-  before_action :logged_in_member, only: [:edit, :update]
-  before_action :correct_member,   only: [:edit, :update]
+  before_action :logged_in_member,          only: [:edit, :update]
+  before_action :correct_member_or_admin,   only: [:edit, :update]
+  before_action :admin,                     only: [:new]
   
   def new
     @member = Member.new
@@ -9,16 +10,11 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
-      log_in @member
-      redirect_to @member
+      redirect_to root_url
       flash[:success] = "Account Created!"
     else
       render :new
     end
-  end
-
-  def show
-      @member = Member.find(params[:id])
   end
 
   def index
@@ -33,10 +29,16 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     if @member.update_attributes(member_params)
       flash[:success] = "Profile Updated!"
-      redirect_to @member
+      redirect_to edit_member_path(@member)
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Member.find(params[:id]).destroy
+    flash[:success] = "Member deleted"
+    redirect_to members_url
   end
 
 
@@ -71,6 +73,11 @@ class MembersController < ApplicationController
       def member_params
           params.require(:member).permit(:firstName, :lastName, :studentNumber, 
                                           :email, :password, :password_confirmation, 
-                                          :avatar)
+                                          :avatar, :about)
+      end
+
+      def admin
+        flash[:warning] = "Only administrators have access to this page."
+        redirect_to root_url unless admin?
       end
 end
