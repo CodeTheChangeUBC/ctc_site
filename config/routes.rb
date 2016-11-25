@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs', to: 
       'info_pages#letsencrypt_root'
 
-  get '/.well-known/acme-challenge/scHEBmTeXwFqKmMNO40Z4FpCesdWlWb6B1xFjI-zpXU', to: 
+  get '/.well-known/acme-challenge/Os0IHI9Z-cecVWDlYh2V_zOOY-r8FFXn6lSnB5Cd0I0', to: 
       'info_pages#letsencrypt_www'
 
   resources :projects
