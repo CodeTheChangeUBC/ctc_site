@@ -1,25 +1,66 @@
 <% provide(:title, 'Edit Profile') %>
 
 <div class="container member-edit">
-  <div class="container col-md-6">
+  <div class="col-sm-6 center">
+      <div class="center avatar">
+         <p><%= image_tag(@member.picture, size: "230x260") %></p>
+      </div>
+      <% if @member.url1 %>
+        <p><%= link_to @member.url1 %></p>  
+      <% elsif @member.url2 %>
+        <p><%= link_to @member.url2 %></p>
+      <% end %>
+      <h3>About you:</h3>
+      <% if @member.about.nil? or @member.about.empty? %>
+        <p>Aww, tell us more!</p>
+      <% else %>
+        <p><%= @member.about %></p>
+      <% end %>
 
+      <% if admin? && !@member.admin %>
+        <%= link_to "Delete Member", @member,
+              method: :delete, 
+              data: { confirm: "Are you sure you want to delete this member? "} %>
+
+        <% if !@member.exec %>
+          <%= link_to "Make #{@member.firstName} an Exec", 
+                home_make_exec_url(member_id: @member.id), 
+                data: { confirm: "Are you sure you want to make #{@member.firstName} an Exec?" } %>
+        <% else %>
+          <%= link_to "Remove #{@member.firstName} as an Exec", 
+              home_unmake_exec_url(member_id: @member.id), 
+              data: { confirm: "Are you sure you want to remove #{@member.firstName} as an Exec?" } %>
+        <% end %>
+      <% end %>
+  </div>
+
+  <div class="container col-md-6 form">
       <%= form_for(@member, html: { multipart: true }) do |f| %>
         <%= render 'shared/error_messages', object: @member %>
-        <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
-        <%= f.text_field :lastName, placeholder: 'Last Name' %>
-        <%= f.email_field :email, placeholder: 'Email (Required)' %>
-        <%= f.text_area :about, placeholder: 'A little bit about yourself!' %>
-        <%= f.password_field :password, placeholder: 'Password (Required)' %>
-        <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
+        <%= f.label :first_name %>
+        <%= f.text_field :firstName, placeholder: '(Required)' %>
+        <%= f.label :last_name %>
+        <%= f.text_field :lastName%>
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: '(Required)' %>
+        <%= f.label :a_little_about_you %>
+        <%= f.text_area :about%>
+        <%= f.label :personal_urls %>
+        <%= f.text_field :url1%>
+        <%= f.text_field :url2%>
+        <% if @member.provider.nil? or @member.provider.empty? or admin? %>
+          <%= f.password_field :password, placeholder: 'Password (Required)' %>
+          <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
+        <% end %>
+        <% if admin? %>
+          <%= f.label :position %>
+          <%= f.text_field :position%>
+        <% end %>
+        
         <strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %>
         <%= f.submit "Edit Profile", class: "btn btn-primary" %>
 
 
       <% end %>
-  </div>
-  <div class="col-sm-6">
-      <div class="center avatar">
-         <p><%= image_tag(@member.picture, size: "230x260") %></p>
-      </div>       
   </div>
 </div>

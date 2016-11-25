@@ -378,9 +378,16 @@ footer {
 
 .member-edit {
 	padding-top: 30px;
+	.form {
+		background-color: $light_gray;
+		border-radius: 5%;
+		padding: 12px 40px 12px 40px;
+	}
 	.avatar {
+		padding-top: 20px;
 		img {
-			border-radius: 5%
+			border-radius: 5%;
+			object-fit: cover;
 		}
 	}
 }

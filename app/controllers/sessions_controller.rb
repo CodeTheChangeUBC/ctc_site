@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def admin_new
+  end
+
   def create
   	member = Member.find_by(email: params[:session][:email].downcase)
     if member && member.authenticate(params[:session][:password])
@@ -10,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_back_or edit_member_path(member)
     else
       flash.now[:danger] = 'Invalid email/password combination.'
-      render 'new'
+      render 'admin_new'
     end
   end
 
@@ -25,9 +28,6 @@ class SessionsController < ApplicationController
     request = Net::HTTP::Get.new(url.request_uri)
     response = http.request(request)
     response.inspect
-      
-    
-
     if (member = Member.find_by_provider_and_uid(auth["provider"], auth["uid"]) || Member.create_with_omniauth(auth))      
       session[:member_id] = member.id
       remember(member)     

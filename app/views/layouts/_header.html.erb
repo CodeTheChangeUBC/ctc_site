@@ -19,11 +19,6 @@
                         <li><%= link_to "Team", members_path %></li>
                         <% if logged_in? %>
                             <li class="member-name"><%= link_to current_member.firstName, edit_member_path(current_member) %></li>
-                            <li><%= link_to(logout_path, method: 'delete') do %>
-                                <span class="glyphicon glyphicon-user"></span>
-                                Logout
-                            <% end %>
-                            </li>
                         <% else %>
                         <% end %>
                     </ul>

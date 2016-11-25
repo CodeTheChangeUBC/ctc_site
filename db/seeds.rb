@@ -5,19 +5,34 @@
 # Make admin
 Member.create!(firstName: "Admin", 
 			   email: "admin@codethechangeubc.org", 
-			   password: "codethechange", 
-			   password_confirmation: "codethechange", 
+			   password: ENV["password"], 
+			   password_confirmation: ENV["password"], 
 			   admin: true)
 
 # Seed fake projects and members if in development mode
 if Rails.env.development? 
 
-	# Seed members
-	30.times do |i|
-		firstName = "Fake name #{i+1}"
-		lastName = "Last name"
+	# Seed Execs
+	10.times do |i|
+		firstName = Faker::Name.name
+		lastName = ""
 		password = "password"
-		email = "valid@example#{i+1}.com"
+		email = Faker::Internet.email
+		Member.create!(firstName: firstName, 
+					   lastName: lastName, 
+					   email: email,
+					   password: password, 
+					   password_confirmation: password, 
+					   exec: true)
+	end
+
+
+	# Seed members
+	10.times do |i|
+		firstName = Faker::Name.name
+		lastName = ""
+		password = "password"
+		email = Faker::Internet.email
 		Member.create!(firstName: firstName, 
 					   lastName: lastName, 
 					   email: email,

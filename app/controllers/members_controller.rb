@@ -18,7 +18,8 @@ class MembersController < ApplicationController
   end
 
   def index
-      @members = Member.all
+      @execs = Member.where(exec: true, admin: false)
+      @members = Member.where(exec: false, admin: false)
   end
 
   def edit
@@ -73,7 +74,7 @@ class MembersController < ApplicationController
       def member_params
           params.require(:member).permit(:firstName, :lastName, :studentNumber, 
                                           :email, :password, :password_confirmation, 
-                                          :avatar, :about)
+                                          :avatar, :about, :url1, :url2)
       end
 
       def admin
