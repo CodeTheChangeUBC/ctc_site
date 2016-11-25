@@ -23,4 +23,10 @@ class ApplicationController < ActionController::Base
       redirect_to(root_url) unless (@member == current_member || admin?)
     end
 
+    def admin
+      unless admin? 
+        redirect_to root_url  
+        flash[:warning] = "Only administrators have access to this page."
+      end
+    end
 end

@@ -21,7 +21,7 @@
         <%= link_to "Delete Member", @member,
               method: :delete, 
               data: { confirm: "Are you sure you want to delete this member? "} %>
-
+        <br/>      
         <% if !@member.exec %>
           <%= link_to "Make #{@member.firstName} an Exec", 
                 home_make_exec_url(member_id: @member.id), 

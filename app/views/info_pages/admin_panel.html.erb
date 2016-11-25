@@ -1,0 +1,15 @@
+<% provide(:title, 'Info Panel') %>
+
+<div class="container admin-panel">
+	<h2 class="center">Administration Panel</h2>
+
+	<div class="col-sm-6">
+		<h3>All Members</h3>
+		<%= render 'member_info', collection: @members %>
+	</div>
+	<div class="col-sm-6">
+		<h3>All Projects</h3>
+		<%= render 'member_info', collection: @members %>
+	</div>
+	
+</div>

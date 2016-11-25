@@ -17,8 +17,11 @@
                         <li><%= link_to "About", about_path %></li>
                         <li><%= link_to "Projects", projects_path %></li>
                         <li><%= link_to "Team", members_path %></li>
+                        <% if admin? %>
+                            <li><%= link_to "Admin Panel", admin_panel_path %></li>
+                        <% end %>
                         <% if logged_in? %>
-                            <li class="member-name"><%= link_to current_member.firstName, edit_member_path(current_member) %></li>
+                            <li class="member-name"><%= link_to "Edit account", edit_member_path(current_member) %></li>
                         <% else %>
                         <% end %>
                     </ul>

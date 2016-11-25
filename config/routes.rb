@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post   '/login',                  to: 'sessions#create'
   delete '/logout',                 to: 'sessions#destroy'
   get '/admin',                     to: 'sessions#admin_new'
-  
+  get '/admin-panel',               to: 'info_pages#admin_panel'
+  delete '/admin-panel',            to: 'info_pages#destroy'
 
   # API URLS
   get '/auth/:provider/callback',   to: 'sessions#create_with_api'

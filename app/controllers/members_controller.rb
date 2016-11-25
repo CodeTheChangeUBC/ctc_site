@@ -77,8 +77,4 @@ class MembersController < ApplicationController
                                           :avatar, :about, :url1, :url2)
       end
 
-      def admin
-        flash[:warning] = "Only administrators have access to this page."
-        redirect_to root_url unless admin?
-      end
 end
