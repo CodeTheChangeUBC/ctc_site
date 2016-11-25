@@ -18,7 +18,3 @@ class InfoPagesController < ApplicationController
   end
 end
 
-
-http://www.codethechangeubc.org/.well-known/acme-challenge/Os0IHI9Z-cecVWDlYh2V_zOOY-r8FFXn6lSnB5Cd0I0 before continuing:
-
-Os0IHI9Z-cecVWDlYh2V_zOOY-r8FFXn6lSnB5Cd0I0.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c
