@@ -1,2 +1,171 @@
-<%= render "intro_section" %>
-<%= render "about_section" %>
+<!-- HOMEPAGE CONTENT (NO SCROLL)-->
+<!--<div id="homepage-content-wrapper" class="container-fluid">-->
+
+  <!-- Intro Section -->
+  <!--<div id="homepage-intro" class="row">-->
+    <!--<div id="arrow">-->
+      <!--<p><span class="glyphicon glyphicon-chevron-right"></span></p>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-3">-->
+      <!--<div id="intro-sidebar">-->
+        <!--<div class="row meow">-->
+          <!--<h3>MEMBERS</h3>-->
+        <!--</div>-->
+        <!--<div class="row meow">-->
+          <!--<h3>PROJECTS</h3>-->
+        <!--</div>-->
+        <!--<div class="row meow">-->
+          <!--<h3>ABOUT</h3>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-9">-->
+      <!--<div id="intro-logo">-->
+        <!--<%= image_tag('ctc-transparent.gif', width: '600') %>-->
+      <!--</div>-->
+
+      <!--<div id="intro-text">-->
+        <!--<h3>Empowering non-profits through open source software.</h3>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+<!-- HOMEPAGE CONTENT -->
+<div id="homepage-content-wrapper">
+
+  <!-- Intro Section (SCROLL) -->
+  <div id="homepage-intro">
+    <div class="foreground">
+      <div id="intro-logo" class="fade-in-delayed" rel="500">
+        <%= image_tag('ctc-transparent.gif') %>
+      </div>
+
+      <div id="intro-text" class="gradient">
+        <h3 class="fade-in-delayed" rel="1500">Empowering non-profits through open source software.</h3>
+        <span id="intro-arrow" class="glyphicon glyphicon-chevron-down fade-in-delayed" rel="2500"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div id="homepage-about" class="container-fluid">
+    <div class="row">
+      <div id="about-title" class="fade-in">
+        <h1>Learn More</h1>
+        <hr>
+      </div>
+
+      <div class="col-xs-offset-1 col-xs-10">
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile1">
+              <!--<div class="overlay">-->
+                <!--<h4>We empower non-profits through the software we build.</h4>-->
+              <!--</div>-->
+            </div>
+            <%= link_to 'About', about_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile2">
+              <!--<div class="overlay">-->
+                <!--<h4>We compete in hackathons with a social agenda.</h4>-->
+              <!--</div>-->
+            </div>
+            <%= link_to 'Members', members_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile3">
+              <!--<div class="overlay">-->
+                <!--<h4>We initiate our own social ventures to create software for social good.</h4>-->
+              <!--</div>-->
+            </div>
+            <%= link_to 'Projects', projects_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--<div class="row">-->
+      <!--<div class="about-box col-xs-offset-1 col-xs-10">-->
+        <!--<div class="col-xs-4">-->
+          <!--<div id="tile1">-->
+            <!--<div class="overlay">-->
+              <!--<h4>We empower non-profits through the software we build.</h4>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<h4>THE TEAM</h4>-->
+          <!--<h4>We empower non-profits through the software we build.</h4>-->
+          <!--<%= link_to 'MEET THE TEAM', '#contact-us', class: 'btn btn-primary' %>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+      <!--<div class="about-box col-xs-offset-1 col-xs-10">-->
+        <!--<div class="col-xs-8">-->
+          <!--<p><span class="glyphicon glyphicon-envelope"></span></p>-->
+          <!--<h4>Compete in hackathons with a social agenda.</h4>-->
+        <!--</div>-->
+        <!--<div class="col-xs-4">-->
+          <!--<div id="tile2">-->
+            <!--<div class="overlay">-->
+              <!--<h4>Compete in hackathons with a social agenda.</h4>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+      <!--<div class="about-box col-xs-offset-1 col-xs-10">-->
+        <!--<div class="col-xs-4">-->
+          <!--<div id="tile3">-->
+            <!--<div class="overlay">-->
+              <!--<h4>Initiate our own social ventures to create software for social good.</h4>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<p><span class="glyphicon glyphicon-envelope"></span></p>-->
+          <!--<h4>Initiate our own social ventures to create software for social good.</h4>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <div id="homepage-contact">
+    <h1>Interested?</h1>
+    <!--<div class="row">-->
+      <!--<div class="col-xs-offset-4 col-xs-1">-->
+        <!--<hr>-->
+      <!--</div>-->
+
+
+      <!--<div class="col-xs-2">-->
+        <!--<%= link_to image_tag('facebook_small', size: '40x40'), 'https://facebook.com/codethechangeubc' %>-->
+        <!--&middot;-->
+        <!--<%= link_to image_tag('github_small', size: '40x40'), 'https://github.com/CodeTheChangeUBC' %>-->
+      <!--</div>-->
+
+      <!--<div class="col-xs-1">-->
+        <!--<hr>-->
+      <!--</div>-->
+
+    <!--</div>-->
+    <%= link_to 'Contact Us', '#contact-us', class: 'btn contact-btn' %>
+  </div>
+
+  <!--</div>-->
+</div>
