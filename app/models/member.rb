@@ -35,6 +35,7 @@ class Member < ActiveRecord::Base
 			lastName = lastName == firstName ? "" : lastName
 		else
 			firstName = auth["info"]["nickname"]
+            fullName = firstName
 		end
 
 		password = SecureRandom.urlsafe_base64
