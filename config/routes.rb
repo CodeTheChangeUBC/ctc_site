@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   # Action URLS 
   get    '/home/make_exec',         to: 'members#make_exec'
   get    '/home/unmake_exec',       to: 'members#unmake_exec'
+
+  # SSL URL
+  get '/.well-known/acme-challenge/F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs', to: 
+      'info_pages#letsencrypt'
   
   resources :projects
   resources :members, only: [:index, :new, :edit, :update, :create, :destroy]
