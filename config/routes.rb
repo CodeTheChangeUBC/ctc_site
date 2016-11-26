@@ -18,7 +18,10 @@ Rails.application.routes.draw do
 
   # SSL URL
   get '/.well-known/acme-challenge/F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs', to: 
-      'info_pages#letsencrypt'
+      'info_pages#letsencrypt_root'
+
+  get '/.well-known/acme-challenge/ASqS42vVN3r0rY2zUEp-kk3uAMo3HCV2zJkXr8Ybvzo', to: 
+      'info_pages#letsencrypt_www'
   
   resources :projects
   resources :members, only: [:index, :new, :edit, :update, :create, :destroy]
