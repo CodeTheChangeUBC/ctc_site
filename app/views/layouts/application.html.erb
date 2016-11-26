@@ -10,7 +10,10 @@
 </head>
 <body>
 
-<% if request.path != '/' %>
+<% if request.path === '/' %>
+    <%= yield %>
+
+<% else %>
     <%= render 'layouts/header' %>
 
     <!-- Render error messages for forms (if any) -->
@@ -23,9 +26,6 @@
     <div id="page-content-wrapper">
       <%= yield %>
     </div>
-
-<% else %>
-    <%= yield %>
 <% end %>
 
 <!-- Enable debug environment if in development environment -->

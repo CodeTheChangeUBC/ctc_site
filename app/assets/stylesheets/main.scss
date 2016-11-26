@@ -171,17 +171,6 @@ input, textarea, select, .uneditable-input {
       }
     }
   }
-  //.links {
-  //  p {
-  //    a {
-  //      color: gray;
-  //      &:hover {
-  //        color: gray;
-  //        text-decoration: underline;
-  //      }
-  //    }
-  //  }
-  //}
 }
 
 /* ============================================
@@ -210,8 +199,6 @@ input, textarea, select, .uneditable-input {
 
 #homepage-content-wrapper {
   text-align: center;
-
-  //height: 100vh; (NOSCROLL)
 }
 
 .gradient {
@@ -223,49 +210,18 @@ input, textarea, select, .uneditable-input {
 }
 
 #homepage-intro {
-  //border-bottom: 2px solid black;
   background: image-url("ubc1.png");
   color: black;
   font-weight: 600;
   height: 690px;
-  //height: 100%; (NOSCROLL)
-  //background: image-url("pexels-photo.jpg") no-repeat;
-  //background-size: cover;
-  //overflow: hidden;
 
   .foreground {
     background-color: rgba(255, 255, 255, 0.8);
     height: 100%;
   }
 
-  //.meow { (NOSCROLL)
-  //  margin-top: 50px;
-  //}
-
-  //#arrow { (NOSCROLL)
-  //  font-size: 5.0em;
-  //  color: $ubc_blue;
-  //  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  //  position: absolute;
-  //  left: 20px;
-  //  bottom: 45vh; //TODO: properly vertical align
-  //  z-index: 10;
-  //}
-
-  //#intro-sidebar { (NOSCROLL)
-  //  position: absolute;
-  //  left: -1200px;
-  //  top: 0;
-  //  height: 100vh; // TODO: set as inherited val
-  //  width: 100%;
-  //  color: white;
-  //  background-color: $ubc_blue;
-  //  z-index: 20;
-  //}
-
   #intro-logo {
-    //margin-top: 200px; (NOSCROLL)
-    height: 60%; //(SCROLL)
+    height: 60%;
 
     img {
       width: 60%;
@@ -273,7 +229,7 @@ input, textarea, select, .uneditable-input {
   }
 
   #intro-text {
-    height: 40%; //(SCROLL)
+    height: 40%;
 
     #intro-arrow {
       font-size: xx-large;
@@ -335,20 +291,6 @@ input, textarea, select, .uneditable-input {
       color: white;
     }
   }
-
-  //.overlay {
-  //  position: absolute;
-  //  height: 100%;
-  //  width: 100%;
-  //  margin: 0;
-  //  background: #333333;
-  //  text-align: center;
-  //  opacity: 0;
-  //  -webkit-transition: opacity .2s ease;
-  //}
-  //.overlay:hover {
-  //  opacity: 1;
-  //}
 
   #tile1, #tile2, #tile3 {
     height: 180px;
