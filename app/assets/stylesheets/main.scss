@@ -10,6 +10,10 @@
 	3. Header
 	4. Footer
 	5. Homepage
+	6. Members Index
+	7. Member's Edit
+	8. Project Index
+	9. Project Show
 
 ##########################################################*/
 
@@ -373,7 +377,7 @@ footer {
 }
 
 /* ============================================
-=============== MEMBERS EDIT ==================
+=============== MEMBER'S EDIT ==================
 ==============================================*/ 
 
 .member-edit {
@@ -391,5 +395,47 @@ footer {
 		}
 	}
 }
+
+/* ============================================
+=============== PROJECTS INDEX ================
+==============================================*/ 
+
+.jumbotron-projects {
+	background: image-url('mboard.jpeg');
+	background-size: cover;
+	height: 300px;
+	h2 {
+		padding-top: 100px;
+	}
+}
+
+.project-index {
+	.col-sm-4 {
+		a {
+			color: $ubc_blue;
+		}
+	}
+}
+
+/* ============================================
+=============== PROJECT SHOW ==================
+==============================================*/ 
+
+.project-show {
+	padding-top: 30px;
+	p {
+		a {
+			color: $rich_green;
+		}
+	}
+	.status {
+		margin-top: 20px;
+		padding: 5px 10px 10px 5px;
+		border: solid 2px gray;
+		border-radius: 3%;
+	}
+}
+
+
 
 

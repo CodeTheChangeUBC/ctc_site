@@ -1,7 +1,8 @@
-<div class="jumbotron">
-    <h1> Listing All Projects </h1>
+<div class="jumbotron jumbotron-projects center">
+    <h2><b>Here are some of the things we build.</b></h1>
 </div>
 
-<%= link_to "Create new project", new_project_path %>
+<div class="container project-index">
+	<%= render @projects %>
+</div>
 
-<%= render @projects %>

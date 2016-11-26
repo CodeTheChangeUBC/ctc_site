@@ -1,11 +1,20 @@
-<div class="jumbotron">
-    <h1><%= @project.title %></h1>
+<div class="container project-show">
+	<h2 class="center"><%= @project.title %></h2>	
+	<div class="col-sm-2 col-sm-offset-5 status center">
+		<%= @project.status %>
+	</div>
+
+	<div class="container col-sm-12 details">
+		<% if admin? %>
+			<%= link_to "Edit Project", edit_project_path(@project) %>
+		<% end %>
+		<p>
+		    <%= @project.description %>
+		</p>
+		<p>You can see the software for the project <%= link_to "here", @project.githubPage %>
+			<% if !@project.project_url.nil? and !@project.project_url.empty? %>
+				and the project in use <%= link_to "here", @project.project_url %>
+			<% end %>.
+		</p>
+	</div>
 </div>
-<%= link_to "Edit Project", edit_project_path(@project) %>
-
-<p>
-    <%= @project.description %>
-</p>
-
-<p>You can see the software for the project <%= link_to "here", @project.githubPage %>
-</p>

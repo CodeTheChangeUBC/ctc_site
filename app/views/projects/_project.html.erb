@@ -1,7 +1,11 @@
-<div class="col-sm-3">
-    <li class="thumb1"><a href="<%= project_path(project) %>" ><%= image_tag("3.jpg", size: "800x347") %>
-      <h3><%= project.title %></h3>
-      <p><%= project.description.to_s[0..60] %></p></a>
-     </li>
+<div class="col-sm-4">
+	  <% description = project.description.to_s %>
+      <h3><%= link_to project.title, project_path(project) %></h3>
+      <p><%= description[0..200] %>
+      	<% if description.length > 200 %>
+      	...
+      	<% end %>
+      </p>
+      <p>See the software <%= link_to "here", project.githubPage %></p>
 </div>
     
