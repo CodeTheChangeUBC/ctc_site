@@ -1,7 +1,11 @@
 <% provide(:title, "Log in") %>
-<div class="row center login_page">
-    <h1>CtC Log in</h1>
+<div class="container-fluid login-page center">
+	<h2><b>Log in to CTC UBC</b></h2>
+	<h4>To ensure you're a valid member of our organization, we ask that you
+	please sign in with your GitHub account.</h4>
+	<div class="login-form center">
+		<%= image_tag ('github_small.png'), size: "150x150" %> <br/>
+		<%= link_to image_tag('github-login.png', size: "230x40"), "/auth/github", class: 'login' %>
+	</div>
 </div>
-
-<p><%= link_to 'Sign up with GitHub', "/auth/github" %> </p>
 
