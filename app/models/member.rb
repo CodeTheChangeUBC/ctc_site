@@ -28,15 +28,20 @@ class Member < ActiveRecord::Base
 	# Create with omniauth(auth)
 	def self.create_with_omniauth(auth)
 		# Split name into first and last
-		fullname = auth["info"]["name"].split(' ')
-		firstName = fullname[0]
-		lastName = fullname[fullname.size-1]
-		lastName = lastName == firstName ? "" : lastName
+		if !auth["info"]["name"].nil?
+			fullname = auth["info"]["name"].split(' ')
+			firstName = fullname[0]
+			lastName = fullname[fullname.size-1]
+			lastName = lastName == firstName ? "" : lastName
+		else
+			firstName = auth["info"]["nickname"]
+		end
+
 		password = SecureRandom.urlsafe_base64
 		# Create member
 		Member.create!( provider: auth["provider"],
 						uid: auth["uid"],
-						firstName: fullname[0],
+						firstName: firstName,
 						lastName: lastName,
 						email: auth["info"]["email"],
 						password: password,
