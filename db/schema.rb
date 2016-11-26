@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103055403) do
+ActiveRecord::Schema.define(version: 20161126000937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20161103055403) do
     t.string   "firstName"
     t.string   "lastName"
     t.integer  "studentNumber"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "password_digest"
     t.string   "email"
     t.string   "remember_digest"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20161103055403) do
     t.boolean  "admin",           default: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "avatar"
+    t.text     "about"
+    t.string   "position",        default: "Developer"
+    t.string   "url1"
+    t.string   "url2"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -37,9 +42,11 @@ ActiveRecord::Schema.define(version: 20161103055403) do
     t.integer  "volCap"
     t.integer  "volNum"
     t.string   "githubPage"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.text     "description"
+    t.string   "status",      default: "In Progress"
+    t.string   "project_url"
   end
 
 end

@@ -31,6 +31,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 # Omniauth gem for authentication with GitHub
 gem 'omniauth-github'
+# To fill up db with fake users in development
+gem 'faker',                   '1.6.3'
+# For file and image uploading
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'mini_magick',             '4.5.1'
+gem 'fog',                     '1.38.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

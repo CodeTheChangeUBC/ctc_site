@@ -1,32 +1,35 @@
-<!-- <div class="col-sm-3"> 
-    <div class="ih-item circle colored effect3 right_to_left"><a href="#">
-        <div class="img"><%= image_tag("1.jpg") %></div>
-        <div class="info">
-          <h3><%= member.firstName %></h3>
-          <h4>Exec or some title</h4>
-        </div>
-     </div>
-  </div>
- --> 
-
 <div class="col-sm-3">
 	<div id="box">
+    <%= image_tag member.picture %>
 	  	<div id="overlay">
 	  		<div class="info">
-	  			<h4><%= link_to member.firstName, member_path(member) %>, Developer</h4>
+	  			<h4 data-toggle="modal" data-target="#info"><%= member.firstName %></h4>
 	  		</div>
 	  	</div>
+	  	<!-- Modal -->
+		<div id="info" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title"><%= member.firstName %></h4>
+		      </div>
+		      <div class="modal-body">
+		        <p><%= member.about %></p>
+		        <% if !member.url1.nil? && !member.url1.empty? %>
+		        	<p><%= link_to member.url1 %></p>
+		        <% elsif !member.url1.nil? && !member.url2.empty? %>
+		        	<p><%= link_to member.url2 %></p>
+		        <% end %>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
 	</div>
 </div>
-<!-- </div>
- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p> 
-					<a href="#">LINK HERE</a>
-				</p> 
-            </div>
-    </div>
-</div>  -->

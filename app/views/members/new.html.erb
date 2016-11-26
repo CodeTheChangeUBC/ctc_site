@@ -1,5 +1,9 @@
 <% provide(:title, 'Sign up') %>
 
+<div class="container col-sm-6 col-sm-offset-3 center">
+  <p></p>
+</div>
+
 <p><%= link_to 'Sign up with GitHub', "/auth/github" %> </p>
 
 <div class="col-md-6 col-md-offset-3">
@@ -11,6 +15,6 @@
       <%= f.text_field :studentNumber, placeholder: 'Student ID Number' %>
       <%= f.password_field :password, placeholder: 'Password (Required)' %>
       <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create account", class: "btn btn-primary" %>
     <% end %>
 </div>

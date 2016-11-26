@@ -1,0 +1,5 @@
+<% @projects.each do |project| %>
+	<li>
+		<p><%= link_to project.title, project_path(project) %></p>
+	</li>
+<% end %>

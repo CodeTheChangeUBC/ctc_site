@@ -23,7 +23,7 @@ class ActionDispatch::IntegrationTest
 
 	# Logs in as a particular user
 	def log_in_as(member, password: 'password', remember_me: '1')
-		post login_path, params: { session: { email: member.email, 
+		post admin_path, params: { session: { email: member.email, 
 												password: password,
 												remember_me: remember_me } }
 	end	

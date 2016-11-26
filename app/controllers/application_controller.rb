@@ -18,9 +18,15 @@ class ApplicationController < ActionController::Base
     end
 
     # Confirms the correct user.
-    def correct_member
+    def correct_member_or_admin
       @member = Member.find(params[:id])
-      redirect_to(root_url) unless @member == current_member
+      redirect_to(root_url) unless (@member == current_member || admin?)
     end
 
+    def admin
+      unless admin? 
+        redirect_to root_url  
+        flash[:warning] = "Only administrators have access to this page."
+      end
+    end
 end
