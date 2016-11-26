@@ -8,24 +8,30 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
-<body data-spy="scroll" data-target=".navbar">	
-	<!-- Global Header -->
-	<%= render "layouts/header" %>
-	<!-- Render error messages for forms (if any) -->
-	<div class="container">
-	    <% flash.each do |message_type, message| %>
-	      <div class="alert alert-<%= message_type %>"><%= message %></div>
-	    <% end %>
-  	</div>
-  	<!-- Yield content form invidividual pages -->
-	<%= yield %>
+<body>
 
-	<!-- Enable debug environment if in development environment --> 
-	<!-- <div class="container">
-    	<%= debug(params) if Rails.env.development? %>
- 	</div>
-  -->
-	<!-- Global Footer -->
-	<%= render "layouts/footer" %>
+<% if request.path === '/' %>
+    <%= yield %>
+
+<% else %>
+    <%= render 'layouts/header' %>
+
+    <!-- Render error messages for forms (if any) -->
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
+    <!-- Yield content from individual pages -->
+    <div id="page-content-wrapper">
+      <%= yield %>
+    </div>
+<% end %>
+
+<!-- Enable debug environment if in development environment -->
+<!-- <div class="container"> -->
+<!--<%= debug(params) if Rails.env.development? %>-->
+<!--</div>-->
+<%= render 'layouts/footer' %>
 </body>
 </html>
