@@ -1,27 +1,28 @@
-<div class="container"></div> 
-<footer class="container-fluid footer">
-	<div class="center links">
-		<% if !current_member %>
-			<%= link_to login_path do %>
-	            <span class="glyphicon glyphicon-user"></span>
-	            Login
-	        <% end %>
-	    <% else %>
-	    	<%= link_to(logout_path, method: 'delete') do %>
-                <span class="glyphicon glyphicon-user"></span>
-                Logout
-            <% end %>
-	     <% end %>
-		&middot;
-		<%=link_to "Contact Us", '#' %> 
-		&middot;
-		<%= link_to image_tag("facebook_small", size: "30x30"), "https://facebook.com/codethechangeubc" %>
-		&middot;
-		<%= link_to image_tag("github_small", size: "30x30"), 'https://github.com/CodeTheChangeUBC' %>
-		&middot;
-		<%= link_to "Parent Organization", 'https://codethechange.org' %>
-	</div>
-	<div class="copyright center">
-		<p>&copy; <%= Time.now.year %>, Code the Change - UBC Chapter</p>
-	</div>
+<footer id="footer">
+  <div id="connect">
+    <p>
+      <% if !current_member %>
+          <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+              Login
+          <% end %>
+      <% else %>
+          <%= link_to(logout_path, method: 'delete') do %>
+              <span class="glyphicon glyphicon-user"></span>
+              Logout
+          <% end %>
+      <% end %>
+      &middot;
+      <%=link_to 'Contact Us', '#' %>
+      &middot;
+      <%= link_to image_tag('facebook_small', size: '30x30'), 'https://facebook.com/codethechangeubc' %>
+      &middot;
+      <%= link_to image_tag('github_small', size: '30x30'), 'https://github.com/CodeTheChangeUBC' %>
+      &middot;
+      <%= link_to 'Parent Organization', 'https://codethechange.org' %>
+    </p>
+  </div>
+  <div id="copyright">
+    <p>&copy; <%= Time.now.year %>, Code the Change - UBC Chapter</p>
+  </div>
 </footer>

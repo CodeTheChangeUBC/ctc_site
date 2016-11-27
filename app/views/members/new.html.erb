@@ -4,17 +4,30 @@
   <p></p>
 </div>
 
-<p><%= link_to 'Sign up with GitHub', "/auth/github" %> </p>
-
+<p><%= link_to 'Sign up with GitHub', "/auth/github" %></p>
 <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@member) do |f| %>
+  <%= form_for(@member) do |f| %>
       <%= render 'shared/error_messages', object: @member %>
-      <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
-      <%= f.text_field :lastName, placeholder: 'Last Name' %>
-      <%= f.email_field :email, placeholder: 'Email (Required)' %>
-      <%= f.text_field :studentNumber, placeholder: 'Student ID Number' %>
-      <%= f.password_field :password, placeholder: 'Password (Required)' %>
-      <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
-      <%= f.submit "Create account", class: "btn btn-primary" %>
-    <% end %>
+      <p>
+        <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
+      </p>
+      <p>
+        <%= f.text_field :lastName, placeholder: 'Last Name' %>
+      </p>
+      <p>
+        <%= f.email_field :email, placeholder: 'Email (Required)' %>
+      </p>
+      <p>
+        <%= f.text_field :studentNumber, placeholder: 'Student ID Number' %>
+      </p>
+      <p>
+        <%= f.password_field :password, placeholder: 'Password (Required)' %>
+      </p>
+      <p>
+        <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
+      </p>
+      <p>
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      </p>
+  <% end %>
 </div>

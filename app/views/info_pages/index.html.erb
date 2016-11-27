@@ -1,2 +1,59 @@
-<%= render "intro_section" %>
-<%= render "about_section" %>
+<!-- HOMEPAGE CONTENT -->
+<div id="homepage-content-wrapper">
+
+  <!-- Intro Section -->
+  <div id="homepage-intro">
+    <div class="foreground">
+      <div id="intro-logo" class="fade-in-delayed" rel="500">
+        <%= image_tag('ctc-transparent.gif') %>
+      </div>
+
+      <div id="intro-text" class="gradient">
+        <h3 class="fade-in-delayed" rel="1500">Empowering non-profits through open source software.</h3>
+        <span id="intro-arrow" class="glyphicon glyphicon-chevron-down fade-in-delayed" rel="2500"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div id="homepage-about" class="container-fluid">
+    <div class="row">
+      <div id="about-title" class="fade-in">
+        <h1>Learn More</h1>
+        <hr>
+      </div>
+
+      <div class="col-xs-offset-1 col-xs-10">
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile1">
+            </div>
+            <%= link_to 'About', about_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile2">
+            </div>
+            <%= link_to 'Members', members_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+
+        <div class="col-md-4 fade-in">
+          <div class="about-box">
+            <div id="tile3">
+            </div>
+            <%= link_to 'Projects', projects_path, class: 'btn about-btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <div id="homepage-contact">
+    <h1>Interested?</h1>
+    <%= link_to 'Contact Us', '#contact-us', class: 'btn contact-btn' %>
+  </div>
+</div>
