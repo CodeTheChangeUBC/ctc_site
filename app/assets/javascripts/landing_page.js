@@ -7,6 +7,12 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $('.contact-btn').click(function () {
+        $('a').animate({"opacity": "1"});
+    });
+});
+
 
 /* Fade in on scroll function. */
 $(window).scroll( function(){

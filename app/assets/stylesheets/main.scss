@@ -368,15 +368,18 @@ input, textarea, select, .uneditable-input {
   padding-top: 100px;
   color: white;
   background-color: #333333;
-
   h1 {
     font-size: 4.5em;
   }
-
   .contact-btn {
     margin-top: 70px;
   }
+  a {
+  	opacity: 0;
+  	color: white;
+  }
 }
+
 
 /* ============================================
 ================== ABOUT PAGE =================
