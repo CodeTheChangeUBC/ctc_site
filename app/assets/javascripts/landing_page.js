@@ -28,32 +28,3 @@ $(document).ready(function() {
         });
     });
 });
-
-// var mouse_position;
-// var animating = false;
-// //GET MOUSE POSITION
-// $(document).mousemove(function (e) {
-//     mouse_position = e.clientX;
-//     if (animating) {
-//         return;
-//     }
-//
-//     if (mouse_position < 200 || $('#intro-sidebar').is(':hover')) {
-//         //SLIDE IN MENU
-//         animating = true;
-//         $('#intro-sidebar').animate({
-//             left: 0,
-//             opacity: 1
-//         }, 200, function () {
-//             animating = false;
-//         });
-//     } else if (mouse_position > 200) {
-//         animating = true;
-//         $('#intro-sidebar').animate({
-//             left: -1200,
-//             opacity: 0
-//         }, 500, function () {
-//             animating = false;
-//         });
-//     }
-// });
