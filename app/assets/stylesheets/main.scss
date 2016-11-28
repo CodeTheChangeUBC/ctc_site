@@ -60,7 +60,7 @@ body {
   background-color: white;
 }
 
-#page-content-wrapper {
+#navbar-offset {
   margin-top: $navbar_height;
 }
 
@@ -125,6 +125,14 @@ input, textarea, select, .uneditable-input {
 
 .center {
   text-align: center;
+}
+
+#error-container {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  z-index: 999;
 }
 
 /* ============================================
@@ -231,6 +239,12 @@ input, textarea, select, .uneditable-input {
 }
 
 .gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  width: 100%;
+
   background: transparent; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1)); /*Safari 5.1-6*/
   background: -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1)); /*Opera 11.1-12*/
@@ -247,25 +261,25 @@ input, textarea, select, .uneditable-input {
   .foreground {
     background-color: rgba(255, 255, 255, 0.8);
     height: 100%;
-  }
+    position: relative;
 
-  #intro-logo {
-    height: 60%;
+    #homepage-intro-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-70%);
 
-    img {
-      width: 60%;
-    }
-  }
+      img {
+        max-width: 850px;
+        width: 80vw;
+      }
 
-  #intro-text {
-    height: 40%;
+      #intro-arrow {
+        font-size: xx-large;
+      }
 
-    #intro-arrow {
-      font-size: xx-large;
-    }
-
-    h3 {
-      font-weight: bold;
+      h3 {
+        font-weight: bold;
+      }
     }
   }
 }
@@ -293,7 +307,7 @@ input, textarea, select, .uneditable-input {
 
   #about-title {
     margin-bottom: 40px;
-    width: 400px;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
 
@@ -314,6 +328,8 @@ input, textarea, select, .uneditable-input {
     margin-top: 10px;
     color: #333333;
     border: 3px solid #333333;
+    padding-left: 0;
+    padding-right: 0;
 
     &:hover {
       background-color: #333333;
@@ -350,7 +366,7 @@ input, textarea, select, .uneditable-input {
   background-color: #333333;
 
   h1 {
-    font-size: 5.0em;
+    font-size: 4.5em;
   }
 
   .contact-btn {
@@ -445,7 +461,7 @@ input, textarea, select, .uneditable-input {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-		height: 20%;
+		height: 60px;
 		background: rgba(0,0,0,0.75);
 		text-align:center;
 		color: white;

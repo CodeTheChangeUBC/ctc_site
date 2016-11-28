@@ -3,11 +3,12 @@
     <%= image_tag member.picture %>
 	  	<div id="overlay">
 	  		<div class="info">
-	  			<h4 data-toggle="modal" data-target="#info"><%= member.firstName %></h4>
+	  			<h4 data-toggle="modal" data-target="#info<%= member.id.to_s %>"><%= member.firstName %> <%= member.lastName %></h4>
+	  			<h5><%= member.position %></h5>
 	  		</div>
 	  	</div>
 	  	<!-- Modal -->
-		<div id="info" class="modal fade" role="dialog">
+		<div id="info<%= member.id.to_s %>" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
 
 		    <!-- Modal content-->

@@ -4,13 +4,17 @@
   <!-- Intro Section -->
   <div id="homepage-intro">
     <div class="foreground">
-      <div id="intro-logo" class="fade-in-delayed" rel="500">
-        <%= image_tag('ctc-transparent.gif') %>
-      </div>
+      <div class="gradient"></div>
 
-      <div id="intro-text" class="gradient">
-        <h3 class="fade-in-delayed" rel="1500">Empowering non-profits through open source software.</h3>
-        <span id="intro-arrow" class="glyphicon glyphicon-chevron-down fade-in-delayed" rel="2500"></span>
+      <div id="homepage-intro-content">
+        <div id="intro-logo" class="fade-in-delayed" rel="500">
+          <%= image_tag('ctc-transparent.gif') %>
+        </div>
+
+        <div id="intro-text">
+          <h3 class="fade-in-delayed" rel="1500">Empowering non-profits through open source software.</h3>
+          <span id="intro-arrow" class="glyphicon glyphicon-chevron-down fade-in-delayed" rel="2500"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -36,7 +40,7 @@
           <div class="about-box">
             <div id="tile2">
             </div>
-            <%= link_to 'Members', members_path, class: 'btn about-btn' %>
+            <%= link_to 'The Team', members_path, class: 'btn about-btn' %>
           </div>
         </div>
 

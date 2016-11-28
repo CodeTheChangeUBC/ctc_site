@@ -81,7 +81,7 @@ class Member < ActiveRecord::Base
 	    if self.avatar?
 	      self.avatar.url
 	    else
-	      '1.jpg'
+	      'generic_photo.jpg'
 	    end
   	end
 
