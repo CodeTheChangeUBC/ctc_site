@@ -479,6 +479,30 @@ input, textarea, select, .uneditable-input {
 	#box:hover #overlay {
 		opacity: 1;
 	}
+	.modal-content {
+		.modal-body {
+			.links {
+				padding-top: 25px;
+				p {
+					color: gray;
+				}
+				a {
+					color: $ubc_blue;
+					font-weight: bold;
+					padding-right: 10px;
+				}
+			}
+		}
+		.modal-footer {
+			.btn {
+				color: $ubc_blue;
+				&:hover {
+					color: white;
+					background-color: $ubc_blue;
+				}
+			}
+		}
+	}
 }
 
 /* ============================================

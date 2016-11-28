@@ -11,4 +11,10 @@ module ApplicationHelper
 			return page_title + join + base_title
 		end
 	end
+
+	# Returns true iff link is not nil of empty
+	def valid_link(link)
+		!link.nil? and !link.empty?
+	end
+
 end

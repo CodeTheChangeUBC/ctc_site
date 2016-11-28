@@ -8,7 +8,7 @@
 	  		</div>
 	  	</div>
 	  	<!-- Modal -->
-		<div id="info<%= member.id.to_s %>" class="modal fade" role="dialog">
+		<div id="info<%= member.id.to_s %>" class="modal fade container" role="dialog">
 		  <div class="modal-dialog">
 
 		    <!-- Modal content-->
@@ -19,14 +19,24 @@
 		      </div>
 		      <div class="modal-body">
 		        <p><%= member.about %></p>
-		        <% if !member.url1.nil? && !member.url1.empty? %>
-		        	<p><%= link_to member.url1 %></p>
-		        <% elsif !member.url1.nil? && !member.url2.empty? %>
-		        	<p><%= link_to member.url2 %></p>
-		        <% end %>
+		        <div class="container-fluid links">
+		        	<% if member.has_urls %>
+		        	<p> Here's where you can find <%= member.firstName %></p>	
+		        	<p><% if valid_link(member.github_url) %>
+		        			<%= link_to "GitHub", member.github_url %> 
+		        		<% end %>
+		        		<% if valid_link(member.url1) %>
+		        			<%= link_to "LinkedIn", member.url1 %> 
+		        		<% end %>
+		        		<% if valid_link(member.url2) %>
+		        			<%= link_to member.url2, member.url2 %> 
+		        		<% end %>
+		        	</p>
+		        	<% end %>
+		        </div>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn-md btn" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
 

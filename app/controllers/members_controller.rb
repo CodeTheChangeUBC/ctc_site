@@ -74,7 +74,7 @@ class MembersController < ApplicationController
       def member_params
           params.require(:member).permit(:firstName, :lastName, :studentNumber, 
                                           :email, :password, :password_confirmation, 
-                                          :avatar, :about, :url1, :url2)
+                                          :avatar, :about, :url1, :url2, :github_url)
       end
 
 end
