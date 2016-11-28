@@ -1,3 +1,13 @@
+$(document).ready(function() {
+    $('.fade-in-delayed').each( function(){
+        
+        /* Get number of miliseconds to delay from rel attribute */
+        var delay = parseInt($(this).attr('rel'));
+        $(this).delay(delay).animate({'opacity':'1'}, 500);
+    });
+});
+
+
 /* Fade in on scroll function. */
 $(window).scroll( function(){
 
@@ -14,17 +24,3 @@ $(window).scroll( function(){
     });
 });
 
-/* Fade in on delay function. */
-$(document).ready(function() {
-    $('.fade-in-delayed').each( function(){
-
-        /* Get number of miliseconds to delay from rel attribute */
-        var delay = parseInt($(this).attr('rel'));
-        $(this).delay(delay).queue(function() {
-
-            $(this).animate({'opacity':'1'}, 500);
-            $(this).dequeue();
-
-        });
-    });
-});

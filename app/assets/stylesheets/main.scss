@@ -267,7 +267,10 @@ input, textarea, select, .uneditable-input {
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%,-70%);
-
+      /*.fade-in-delayed {
+      	opacity: 1;
+      }
+*/
       img {
         max-width: 850px;
         width: 80vw;
