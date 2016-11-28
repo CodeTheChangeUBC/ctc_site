@@ -14,7 +14,8 @@
 	7. Member's Edit
 	8. Project Index
 	9. Project Show
-	10. Login page
+	10. Project New
+	11. Login page
 
 ##########################################################*/
 
@@ -180,11 +181,10 @@ input, textarea, select, .uneditable-input {
   text-align:center;
   width: 100%;
   height: $footer_height;
-
   padding-top: 25px;
   background-color: $light_gray;
-
   border-top: 1px solid gray;
+  bottom: 0;
   #connect {
     color: gray;
     a {
@@ -488,6 +488,14 @@ input, textarea, select, .uneditable-input {
 		background-color: $light_gray;
 		border-radius: 5%;
 		padding: 12px 40px 12px 40px;
+		.btn {
+			color: black;
+			border: solid 2px black;
+			&:hover {
+				color: white;
+				background-color: $ubc_blue;
+			}
+		}
 	}
 	.avatar {
 		padding-top: 20px;
@@ -525,6 +533,7 @@ input, textarea, select, .uneditable-input {
 
 .project-show {
 	padding-top: 30px;
+	padding-bottom: 100px;
 	p {
 		a {
 			color: $rich_green;
@@ -532,11 +541,30 @@ input, textarea, select, .uneditable-input {
 	}
 	.status {
 		margin-top: 20px;
+		margin-bottom: 20px;
 		padding: 5px 10px 10px 5px;
 		border: solid 2px gray;
 		border-radius: 3%;
 	}
 }
+
+/* ============================================
+=============== PROJECT NEW ==================
+==============================================*/
+
+.create-project {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	.btn {
+		color: black;
+		border: solid 1px black;
+		&:hover {
+			background-color: $ubc_blue;
+			color: white;
+		}
+	}
+}
+
 
 /* ============================================
 =============== LOGIN PAGE ====================

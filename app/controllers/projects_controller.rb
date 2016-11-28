@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+    before_action :admin, only: [:new, :create, :update, :destroy]
 
     def new
         @project = Project.new
@@ -37,14 +38,17 @@ class ProjectsController < ApplicationController
     end
 
 
-    def delete
+    def destroy
+        Project.find(params[:id]).destroy
+        flash[:success] = "Project deleted"
+        redirect_back_or projects_url
     end
 
     private
         def project_params
             params.require(:project).permit(:title, :startDate, :endDate, 
                                             :volCap, :volNum, :githubPage, 
-                                            :description)
+                                            :description, :status, :project_url)
         end
 
 end

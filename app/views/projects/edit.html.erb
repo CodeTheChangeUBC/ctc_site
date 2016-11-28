@@ -1,15 +1,26 @@
 <% provide(:title, 'Edit Project') %>
-<h1>Edit Project</h1>
 
-<div class="col-md-6 col-md-offset-3">
-    <%= form_for(@project) do |f| %>
-      <%= render 'shared/error_messages', object: @project %>
-      <%= f.text_field :title, placeholder: 'Title' %>
-      Please enter full URL (e.g. https://imawesome.com)
-      <%= f.text_field :githubPage, placeholder: 'Github URL' %>
-      <%= f.text_area :description, placeholder: 'Description' %>
-      <%= f.submit "Edit Project", class: "btn btn-primary" %>
-    <% end %>
+
+<div class="container-fluid create-project">
+	<h2 class="center">Edit project.</h2>
+	<div class="col-md-6 col-md-offset-3">
+	    <%= form_for(@project) do |f| %>
+	      <%= render 'shared/error_messages', object: @project %>
+	      <%= f.label :title %>
+	      <%= f.text_field :title %>
+	      <%= f.label :gitHub_url%>
+	      <p><small>Please enter full URL (e.g. https://imawesome.com)</small></p>
+	      <%= f.text_field :githubPage  %>
+	      <%= f.label :status %>
+	      <%= f.text_field :status %>
+	      <%= f.label :project_url %>
+	      <p><small>(If project has a home on the web)</small></p>
+	      <%= f.text_field :project_url %>
+	      <%= f.label :description %>
+	      <%= f.text_area :description, rows: "10" %>
+	      <%= f.submit "Edit Project", class: "btn btn-primary" %>
+	    <% end %>
+	</div>
 </div>
 
 

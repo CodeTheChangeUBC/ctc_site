@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def destroy
     Member.find(params[:id]).destroy
     flash[:success] = "Member deleted"
-    redirect_to members_url
+    redirect_back_or members_url
   end
 
 
