@@ -41,7 +41,7 @@ class Member < ActiveRecord::Base
 		# Create member
 		Member.create!( provider: auth["provider"],
 						uid: auth["uid"],
-						firstName: fullname[0],
+						firstName: firstName,
 						lastName: lastName,
 						email: auth["info"]["email"],
 						password: password,

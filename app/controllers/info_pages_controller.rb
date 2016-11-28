@@ -26,7 +26,8 @@ class InfoPagesController < ApplicationController
   end
   
   def letsencrypt_www
-      render text: "ASqS42vVN3r0rY2zUEp-kk3uAMo3HCV2zJkXr8Ybvzo.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
+      render text: "Os0IHI9Z-cecVWDlYh2V_zOOY-r8FFXn6lSnB5Cd0I0.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
   end
 
 end
+
