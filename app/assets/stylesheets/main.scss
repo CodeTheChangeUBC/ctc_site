@@ -16,6 +16,7 @@
 	9. Project Show
 	10. Project New
 	11. Login page
+	12. New Member page
 
 ##########################################################*/
 
@@ -615,3 +616,31 @@ input, textarea, select, .uneditable-input {
 		}
 	}
 }
+
+/* ============================================
+=============== MEMBER NEW ====================
+==============================================*/
+
+.member-new {
+	h2 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	p {
+		color: gray;
+		padding-bottom: 15px;
+	}
+
+	.btn {
+		color: black;
+		border: solid 1px black;
+
+		margin-top: 20px;
+		margin-bottom: 70px;
+		&:hover {
+			background-color: $ubc_blue;
+			color: white;
+		}
+	}
+}
+

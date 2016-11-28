@@ -18,8 +18,8 @@ class MembersController < ApplicationController
   end
 
   def index
-      @execs = Member.where(exec: true, admin: false)
-      @members = Member.where(exec: false, admin: false)
+      @execs = Member.where(exec: true, admin: false).order(:created_at)
+      @members = Member.where(exec: false, admin: false).order(:created_at)
   end
 
   def edit
