@@ -36,7 +36,7 @@ class Member < ActiveRecord::Base
 		else
 			firstName = auth["info"]["nickname"]
 		end
-
+		github_url = auth["info"]["urls"]["GitHub"]
 		password = SecureRandom.urlsafe_base64
 		# Create member
 		Member.create!( provider: auth["provider"],
@@ -44,6 +44,7 @@ class Member < ActiveRecord::Base
 						firstName: firstName,
 						lastName: lastName,
 						email: auth["info"]["email"],
+						github_url: github_url,
 						password: password,
 						password_confirmation: password
 		)
@@ -81,8 +82,17 @@ class Member < ActiveRecord::Base
 	    if self.avatar?
 	      self.avatar.url
 	    else
-	      '1.jpg'
+	      'generic_photo.jpg'
 	    end
+  	end
+
+  	def has_urls
+  		a = self.url1 || self.url2 || self.github_url
+  		if !a.nil? and !a.empty?
+  			true
+  		else
+  			false
+  		end
   	end
 
     private 

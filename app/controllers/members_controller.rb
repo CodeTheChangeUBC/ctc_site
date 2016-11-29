@@ -18,8 +18,8 @@ class MembersController < ApplicationController
   end
 
   def index
-      @execs = Member.where(exec: true, admin: false)
-      @members = Member.where(exec: false, admin: false)
+      @execs = Member.where(exec: true, admin: false).order(:created_at)
+      @members = Member.where(exec: false, admin: false).order(:created_at)
   end
 
   def edit
@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def destroy
     Member.find(params[:id]).destroy
     flash[:success] = "Member deleted"
-    redirect_to members_url
+    redirect_back_or members_url
   end
 
 
@@ -74,7 +74,7 @@ class MembersController < ApplicationController
       def member_params
           params.require(:member).permit(:firstName, :lastName, :studentNumber, 
                                           :email, :password, :password_confirmation, 
-                                          :avatar, :about, :url1, :url2)
+                                          :avatar, :about, :url1, :url2, :github_url)
       end
 
 end

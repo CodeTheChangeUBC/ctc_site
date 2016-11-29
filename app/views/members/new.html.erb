@@ -1,33 +1,18 @@
 <% provide(:title, 'Sign up') %>
 
-<div class="container col-sm-6 col-sm-offset-3 center">
-  <p></p>
+<div class="container member-new">
+  <h2 class="center">Create a new member.</h2>
+  <p class="center">Note that if you are manually creating a member as an admin, then the member will only be able to be edited via the admin account.</p>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@member) do |f| %>
+        <%= render 'shared/error_messages', object: @member %>
+          <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
+          <%= f.text_field :lastName, placeholder: 'Last Name' %>
+          <%= f.email_field :email, placeholder: 'Email (Required)' %>
+          <%= f.text_field :position, placeholder: 'Position' %>
+          <%= f.password_field :password, placeholder: 'Password (Required)' %>
+          <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
+          <%= f.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
 </div>
-
-<p><%= link_to 'Sign up with GitHub', "/auth/github" %></p>
-<div class="col-md-6 col-md-offset-3">
-  <%= form_for(@member) do |f| %>
-      <%= render 'shared/error_messages', object: @member %>
-      <p>
-        <%= f.text_field :firstName, placeholder: 'First Name (Required)' %>
-      </p>
-      <p>
-        <%= f.text_field :lastName, placeholder: 'Last Name' %>
-      </p>
-      <p>
-        <%= f.email_field :email, placeholder: 'Email (Required)' %>
-      </p>
-      <p>
-        <%= f.text_field :studentNumber, placeholder: 'Student ID Number' %>
-      </p>
-      <p>
-        <%= f.password_field :password, placeholder: 'Password (Required)' %>
-      </p>
-      <p>
-        <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation (Required)' %>
-      </p>
-      <p>
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
-      </p>
-  <% end %>
 </div>

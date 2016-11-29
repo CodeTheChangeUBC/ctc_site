@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
     if member && member.authenticate(params[:session][:password])
       log_in member
       params[:session][:remember_me] == '1' ? remember(member) : forget(member)
-      redirect_back_or edit_member_path(member)
+      if member.admin? 
+        redirect_back_or admin_panel_url
+      else
+        redirect_back_or edit_member_path(member)
+      end
     else
       flash.now[:danger] = 'Invalid email/password combination.'
       render 'admin_new'

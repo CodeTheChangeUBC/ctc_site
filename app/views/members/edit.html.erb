@@ -44,9 +44,13 @@
         <%= f.label :email %>
         <%= f.email_field :email, placeholder: '(Required)' %>
         <%= f.label :a_little_about_you %>
-        <%= f.text_area :about%>
+        <%= f.text_area :about, rows: "5"%>
         <%= f.label :personal_urls %>
+        <p><small>GitHub</small></p>
+        <%= f.text_field :github_url %>
+        <p><small>LinkedIn</small></p>
         <%= f.text_field :url1%>
+        <p><small>Personal Site</small></p>
         <%= f.text_field :url2%>
         <% if @member.provider.nil? or @member.provider.empty? or admin? %>
           <%= f.password_field :password, placeholder: 'Password (Required)' %>

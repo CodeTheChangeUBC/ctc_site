@@ -1,16 +1,25 @@
 <% provide(:title, 'New Project') %>
-<h2>New Project</h2>
 
-<div class="col-md-6 col-md-offset-3">
-    <%= form_for(@project) do |f| %>
-      <%= render 'shared/error_messages', object: @project %>
-      <%= f.text_field :title, placeholder: 'Title' %>
-      Please enter full URL (e.g. https://imawesome.com)
-      <%= f.text_field :githubPage, placeholder: 'Github URL' %>
-      <%= f.text_area :description, placeholder: 'Description' %>
-      <%= f.submit "Create this project!", class: "btn btn-primary" %>
-    <% end %>
+<div class="container-fluid create-project">
+	<h2 class="center">
+		Create a new project.
+	</h2>
+	<div class="col-md-6 col-md-offset-3">
+	    <%= form_for(@project) do |f| %>
+	      <%= render 'shared/error_messages', object: @project %>
+	      <%= f.label :title %>
+	      <%= f.text_field :title %>
+	      <p><small>Please enter full URL (e.g. https://imawesome.com)</small></p>
+	      <%= f.label :github_url %>
+	      <%= f.text_field :githubPage %>
+	      <%= f.label :status %>
+	      <%= f.text_field :status %>
+	      <%= f.label :project_url %>
+	      <p><small>(If project has a home on the web)</small></p>
+	      <%= f.text_field :project_url %>
+	      <%= f.label :description %>
+	      <%= f.text_area :description, rows: "10" %>
+	      <%= f.submit "Create this project!", class: "btn btn-primary" %>
+	    <% end %>
+	</div>
 </div>
-
-
-
