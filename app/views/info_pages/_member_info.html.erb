@@ -1,5 +1,9 @@
 <% @members.each do |member| %>
-	<% fullName = member.firstName + member.lastName %>
+	<% fullName = member.firstName 
+		if !member.lastName.nil? 
+			fullName = fullName + " " + member.lastName
+		end 
+	%>
 	<li>
 		<p><%= link_to fullName, edit_member_path(member) %> 
 		| <%= link_to "delete", member, method: :delete,

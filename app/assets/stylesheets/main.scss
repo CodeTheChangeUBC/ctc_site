@@ -647,3 +647,27 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
+/* ============================================
+=============== ADMIN LOGIN ====================
+==============================================*/
+
+.admin-login {
+	h2 {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.btn {
+		color: black;
+		border-color: black;
+		margin-bottom: 100px;
+		margin-top: 20px;
+		&:hover {
+			color: white;
+			background-color: $ubc_blue;
+		}
+	}
+}
+
+
+
+
