@@ -5,10 +5,14 @@
       <div class="center avatar">
          <p><%= image_tag(@member.picture, size: "230x260") %></p>
       </div>
-      <% if @member.url1 %>
-        <p><%= link_to @member.url1 %></p>  
-      <% elsif @member.url2 %>
-        <p><%= link_to @member.url2 %></p>
+      <% if valid_link(@member.url1) %>
+        <p><%= link_to "LinkedIn", @member.url1 %></p>  
+      <% end %>
+      <% if valid_link(@member.url2) %>
+        <p><%= link_to "Personal Site", @member.url2 %></p>
+      <% end %>
+      <% if valid_link(@member.github_url) %>
+        <p><%= link_to "GitHub", @member.github_url %></p>    
       <% end %>
       <h3>About you:</h3>
       <% if @member.about.nil? or @member.about.empty? %>
