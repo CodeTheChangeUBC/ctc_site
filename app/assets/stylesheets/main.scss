@@ -268,6 +268,9 @@ input, textarea, select, .uneditable-input {
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%,-70%);
+      .intro-text {
+        padding-top: 20px;
+      }
       /*.fade-in-delayed {
       	opacity: 1;
       }
@@ -290,7 +293,7 @@ input, textarea, select, .uneditable-input {
 
 #homepage-about {
   padding-bottom: 200px;
-  background-color: white;
+  /*background-color: white;*/
 
   .about-box {
     padding: 30px;
