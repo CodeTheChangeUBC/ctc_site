@@ -21,7 +21,7 @@
 		        <p><%= member.about %></p>
 		        <div class="container-fluid links">
 		        	<% if member.has_urls %>
-		        	<p> Here's where you can find <%= member.firstName %></p>	
+		        	<p> Here's where you can find <%= member.firstName %>:</p>	
 		        	<p><% if valid_link(member.github_url) %>
 		        			<%= link_to "GitHub", member.github_url %> 
 		        		<% end %>
