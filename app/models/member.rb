@@ -5,9 +5,10 @@ class Member < ActiveRecord::Base
 	validates :firstName,  presence: true, length: { maximum: 50 }
 	validates :lastName, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 },
+	validates :email, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+                    uniqueness: { case_sensitive: false }, 
+                    allow_nil: true
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
@@ -35,6 +36,7 @@ class Member < ActiveRecord::Base
 			lastName = lastName == firstName ? "" : lastName
 		else
 			firstName = auth["info"]["nickname"]
+			lastName = ""
 		end
 		github_url = auth["info"]["urls"]["GitHub"]
 		password = SecureRandom.urlsafe_base64
@@ -99,7 +101,7 @@ class Member < ActiveRecord::Base
 
 	    # Converts email to lowercase 
 	    def downcase_email
-	      self.email = email.downcase
+	      self.email = email.downcase unless self.email.nil?
 	    end
 
 end
