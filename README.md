@@ -22,8 +22,7 @@ Hi and welcome to the UBC Chapter of Code the Change's website project page. It 
 	- After modifying the database, to run tests first run `rake db:test:prepare`
 
 ### People ###
-** Project Lead **: [Graham Brown](https://github.com/grellyd).
-** Contributors **: [Ben Chugg](https://github.com/bchugg)
+Contributors: Graham Brown, Ben Chugg, Evan Waterman. 
 
 ### How to contribute ###
 Grab an issue, fix it and submit a pull-request! We love you! No commit is too small. 
