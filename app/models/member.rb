@@ -4,13 +4,9 @@ class Member < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 	validates :firstName,  presence: true, length: { maximum: 50 }
 	validates :lastName, length: { maximum: 50 }
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-	validates :email, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }, 
-                    allow_nil: true
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+    validates :subscriber_id, presence: true
 
 	class << self
 		# Returns the hash digest of the given string.
@@ -28,6 +24,10 @@ class Member < ActiveRecord::Base
 
 	# Create with omniauth(auth)
 	def self.create_with_omniauth(auth)
+        # find if matching subscriber
+        user_email = auth["info"]["email"]
+        user_subscriber_id = find_subscriber(user_email)
+        
 		# Split name into first and last
 		if !auth["info"]["name"].nil?
 			fullname = auth["info"]["name"].split(' ')
@@ -45,10 +45,10 @@ class Member < ActiveRecord::Base
 						uid: auth["uid"],
 						firstName: firstName,
 						lastName: lastName,
-						email: auth["info"]["email"],
 						github_url: github_url,
 						password: password,
-						password_confirmation: password
+						password_confirmation: password,
+						subscriber_id: subscriber_id
 		)
 	end
 
@@ -95,5 +95,20 @@ class Member < ActiveRecord::Base
 	    def downcase_email
 	      self.email = email.downcase unless self.email.nil?
 	    end
+
+        # takes an email and searches for the relevant subscriber
+        #   if one is not found, one is created
+        # Args: user_email - the user's email as a string
+        # Returns: subscriber_id - the id of the matching subscriber object
+        def find_subscriber(user_email)
+            begin
+                found_subscriber = Subscriber.find_by! email: user_email
+                subscriber_id = found_subscriber.id
+            rescue ActiveRecord::RecordNotFound
+                new_subscriber = Subscriber.create_subscriber(email)
+                subscriber_id = new_subscriber.id
+            end
+            subscriber_id
+        end
 
 end
