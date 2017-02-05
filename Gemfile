@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails',                   '>= 5.0.0.rc2', '< 5.1'
 gem 'bcrypt',                  '3.1.11'
 # Use PostgreSQL as the database for Active Record
-gem 'pg'
+gem 'pg', '~>0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -15,23 +15,25 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
-gem 'coffee-script'
+gem 'coffee-script', '~>2.4.1'
 
 gem 'bootstrap-sass', '>=3.3.6'
 
+# Use mailgun-ruby for the mailer
+gem 'mailgun-ruby', '~>1.1.3'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~>4.2.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+gem 'turbolinks', '~>5.0.1'
+gem 'jquery-turbolinks', '~>2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Figaro gem for secure API and application information
-gem 'figaro'
+gem 'figaro', '~>1.1.1'
 # Omniauth gem for authentication with GitHub
-gem 'omniauth-github'
+gem 'omniauth-github', '~>1.1.2'
 # To fill up db with fake users in development
 gem 'faker',                   '1.6.3'
 # For file and image uploading
@@ -44,7 +46,7 @@ gem 'redcarpet', '~> 3.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+    gem 'byebug', '~>9.0.6'
 end
 
 group :development do
@@ -61,7 +63,9 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+    gem 'rails_12factor', '~>0.0.3'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
