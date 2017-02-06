@@ -4,9 +4,9 @@ class Subscriber < ActiveRecord::Base
     VALID_DATE_REGEX = /\A[0-9]{10}\z/i
 
     before_save :downcase_email
-    validates :recieve_mail, allow_nil: false
+    validate :recieve_mail
     validates :signup_date, allow_nil: false, format: { with: VALID_DATE_REGEX }
-    validates :no_email_date, allow_nil: true
+    validate :no_email_date
 	validates :email, 
         length: { maximum: 255 },
         format: { with: VALID_EMAIL_REGEX },
@@ -28,5 +28,5 @@ class Subscriber < ActiveRecord::Base
 	    # Converts email to lowercase 
 	    def downcase_email
 	      self.email = email.downcase unless self.email.nil?
-
+        end
 end

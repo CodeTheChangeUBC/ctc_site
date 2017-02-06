@@ -394,6 +394,10 @@ input, textarea, select, .uneditable-input {
       color: white;
     }
   }
+  .subscriber-form {
+      margin-top: 70px;
+      color: black;
+  }
   a {
   	opacity: 0;
   	color: white;
@@ -411,6 +415,14 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+#homepage-contact-subscribe-div {
+    display: inline-block;
+    vertical-align: top;
+}
+#homepage-contact-contact-div {
+    display: inline-block;
+    vertical-align: top;
+}
 
 /* ============================================
 ================== ABOUT PAGE =================

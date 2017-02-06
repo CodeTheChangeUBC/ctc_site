@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'info_pages#index'
-  get '/subscribe',                 to: 'info_pages#subscribe'
+  post '/subscribe',                 to: 'info_pages#subscribe'
   get '/about',                     to: 'info_pages#about'
   get '/login',                     to: 'sessions#new'
   post   '/login',                  to: 'sessions#create'

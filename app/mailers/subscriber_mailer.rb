@@ -8,7 +8,7 @@ class SubscriberMailer < ApplicationMailer
         message_params = { :from    => ENV['mailgun_email_address'],
                            :to      => @subscriber.email,
                            :subject => 'Welcome to the UBC Code the Change Community!',
-                           :text    => 'test'
+                           :text    => SubscriberMailer.welcome_email
         }
         result = mg_client.send_message ENV['mailgun_domain'], message_params
         puts '============='
