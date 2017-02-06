@@ -12,6 +12,7 @@ Hi and welcome to the UBC Chapter of Code the Change's website project page. It 
 * Deployment instructions: 
 	 - **Remotely** Heroku auto-deploys from production branch. Ensure this branch is always stable!
 	 - **Locally** Run `rails server` or `rails s` for a localhost server at port 3000. To specify a different port include `-p`, e.g., `rails s -p 3001`. 
+     - Be sure to get a copy of config/application.yml config/secrets.yml from one of the project maintainers on CtC Slack at #our-website
 	 
 
 * Database Manipulation:
