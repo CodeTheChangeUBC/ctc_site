@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170226155245) do
     t.string   "url1"
     t.string   "url2"
     t.string   "github_url"
+    t.integer  "subscriber"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -49,6 +50,14 @@ ActiveRecord::Schema.define(version: 20170226155245) do
     t.string   "status",      default: "In Progress"
     t.string   "project_url"
     t.string   "avatar"
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string   "email",                        null: false
+    t.boolean  "recieve_mail",  default: true
+    t.integer  "no_email_date"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end

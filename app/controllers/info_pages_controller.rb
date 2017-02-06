@@ -14,9 +14,13 @@ class InfoPagesController < ApplicationController
   end
 
   def subscribe
+      @subscriber = Subscriber.create(email: params[:subscriber][:email])
+      puts "Trying to send mail..."
       puts @subscriber
-      flash[:notice] = "Thanks for subscribing!"
-      redirect_to root_path
+      puts @subscriber.email
+      mail = SubscriberMailer.welcome_email(@subscriber)
+      puts mail
+      puts "Done Trying"
   end
 
   private 

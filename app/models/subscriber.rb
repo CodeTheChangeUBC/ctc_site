@@ -5,19 +5,17 @@ class Subscriber < ActiveRecord::Base
 
     before_save :downcase_email
     validate :recieve_mail
-    validates :signup_date, allow_nil: false, format: { with: VALID_DATE_REGEX }
     validate :no_email_date
 	validates :email, 
         length: { maximum: 255 },
         format: { with: VALID_EMAIL_REGEX },
         uniqueness: { case_sensitive: false }, 
-        allow_nil: true
+        allow_nil: false
 
     # create a subscriber and return it
     def self.create_subscriber(email)
         Subscriber.create!(email: email,
-                           recieve_mail: True,
-                           signup_date: time().now(),
+                           recieve_mail: true,
                            no_email_date: None
                           )
     end

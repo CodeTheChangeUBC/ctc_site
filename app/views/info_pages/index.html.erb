@@ -71,7 +71,7 @@
       </div>
     </div>
     <div id="homepage-contact-subscribe-div">
-    <%= form_for @subscriber, url: {action: "subscribe"}, html: {id: "subscriber-form", class: "form-inline subscriber-form"} do |f| %>
+    <%= form_for @subscriber, url: {action: "subscribe"}, html: {remote: true, id: "subscriber-form", class: "form-inline subscriber-form"} do |f| %>
         <%=f.text_field :email %>
         <%= f.submit "Subscribe"%>
     <% end %>
