@@ -15,12 +15,15 @@ class InfoPagesController < ApplicationController
 
   def subscribe
       @subscriber = Subscriber.create(email: params[:subscriber][:email])
-      puts "Trying to send mail..."
-      puts @subscriber
-      puts @subscriber.email
-      mail = SubscriberMailer.welcome_email(@subscriber)
-      puts mail
-      puts "Done Trying"
+      if @subscriber.valid?
+          mail = SubscriberMailer.welcome_email(@subscriber)
+          puts mail
+          redirect_to root_url
+          flash[:success] = "Thanks for subscribing!"
+      else
+          redirect_to root_url
+          flash[:warning] = "Couldn't sign you up. Try again?"
+      end
   end
 
   private 

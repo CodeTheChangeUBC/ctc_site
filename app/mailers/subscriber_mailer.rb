@@ -4,15 +4,12 @@ class SubscriberMailer < ApplicationMailer
     def welcome_email(subscriber)
         @subscriber = subscriber
         @url = 'http://www.codethechangeubc.org'
-        template = render "subscriber_mailer/welcome_email.html"
-        puts template
         mg_client = Mailgun::Client.new ENV['mailgun_api_key']
         message_params = { :from    => ENV['mailgun_email_address'],
                            :to      => @subscriber.email,
                            :subject => 'Welcome to the UBC Code the Change Community!',
                            :html    => render(template: "subscriber_mailer/welcome_email")
         }
-        puts message_params
         result = mg_client.send_message ENV['mailgun_domain'], message_params
         puts '============='
         puts 'EMAIL RESULTS'
