@@ -485,6 +485,9 @@ input, textarea, select, .uneditable-input {
    }
 	#box:hover #overlay {
 		opacity: 1;
+    .clickable {
+      cursor: pointer;
+    }
 	}
 	.modal-content {
 		.modal-body {
