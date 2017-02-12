@@ -1,17 +1,17 @@
-$(document).ready(function() {
-    $('.fade-in-delayed').each( function(){
+// $(document).ready(function() {
+//     $('.fade-in-delayed').each( function(){
         
-        /* Get number of miliseconds to delay from rel attribute */
-        var delay = parseInt($(this).attr('rel'));
-        $(this).delay(delay).animate({'opacity':'1'});
-    });
-});
+//         /* Get number of miliseconds to delay from rel attribute */
+//         var delay = parseInt($(this).attr('rel'));
+//         $(this).delay(delay).animate({'opacity':'1'});
+//     });
+// });
 
-$(document).ready(function() {
-    $('.contact-btn').click(function () {
-        $('a').animate({"opacity": "1"});
-    });
-});
+// $(document).ready(function() {
+//     $('.contact-btn').click(function () {
+//         $('a').animate({"opacity": "1"});
+//     });
+// });
 
 
 /* Fade in on scroll function. */
