@@ -157,13 +157,19 @@ input, textarea, select, .uneditable-input {
   	color: $ubc_blue;
   	font-weight: bold;
   }
-  .navbar-nav li a:hover,
+  .navbar-collapse {
+    @media only screen and (max-device-width: 640px) {
+      background-color: white;
+    }
+  }
+  /*.navbar-nav li a:hover,
   .navbar-nav li a:focus {
     background-color: rgba(255,255,255,0);
     text-decoration: underline;
     color: $ubc_blue;
     opacity: 0.4;
   }
+  */
   .navbar-header {
   	.navbar-toggle {
   		margin-top: 25px;
@@ -377,6 +383,9 @@ input, textarea, select, .uneditable-input {
   }
   .contact-btn {
     margin-top: 70px;
+    &:focus:not(:hover) {
+      color: white;
+    }
   }
   a {
   	opacity: 0;

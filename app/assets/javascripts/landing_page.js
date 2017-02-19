@@ -1,3 +1,15 @@
+$(document).ready(function() {
+    $('.contact-btn').click(function () {
+    	var link = '#homepage-contact a'
+    	if ($(link).css("opacity") == "0") {
+    		$(link).animate({"opacity": "1"});
+    	} else {
+    		$(link).animate({"opacity": "0"});
+    	}
+    });
+});
+
+
 // $(document).ready(function() {
 //     $('.fade-in-delayed').each( function(){
         
@@ -7,11 +19,6 @@
 //     });
 // });
 
-// $(document).ready(function() {
-//     $('.contact-btn').click(function () {
-//         $('a').animate({"opacity": "1"});
-//     });
-// });
 
 
 /* Fade in on scroll function. */
