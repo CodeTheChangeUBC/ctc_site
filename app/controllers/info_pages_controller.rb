@@ -17,17 +17,9 @@ class InfoPagesController < ApplicationController
 
   private 
 
-  def letsencrypt
-      render text: "F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
-  end
-
   def letsencrypt_root
-      render text: "F1grBE1NDZgouNGkuM-pqMsWTAr1kxLpSkIebdZ4hRs.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
+      render text: "MQHvIkRQk-lJUM5BSmmN-89w5VwX5eYLr4yZgWpZqrg.UyFZg_rvPfJskXKL7AUxayXN4ToZ4wk8HzwvkEg6L8A"
   end
   
-  def letsencrypt_www
-      render text: "Os0IHI9Z-cecVWDlYh2V_zOOY-r8FFXn6lSnB5Cd0I0.90OfpW_KIW2iDH7PtIYfiH7-LrriBcwfdEBteAfLR7c"
-  end
-
 end
 
