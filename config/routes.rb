@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   get '/.well-known/acme-challenge/MQHvIkRQk-lJUM5BSmmN-89w5VwX5eYLr4yZgWpZqrg', to:
       'info_pages#letsencrypt_root'
 
-  get '/testing', to: 'info_pages#testing'
-  
   resources :projects
   resources :members, only: [:index, :new, :edit, :update, :create, :destroy]
 end
