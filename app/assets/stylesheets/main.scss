@@ -162,14 +162,13 @@ input, textarea, select, .uneditable-input {
       background-color: white;
     }
   }
-  /*.navbar-nav li a:hover,
+  .navbar-nav li a:hover,
   .navbar-nav li a:focus {
     background-color: rgba(255,255,255,0);
     text-decoration: underline;
     color: $ubc_blue;
-    opacity: 0.4;
+    opacity: 0.8;
   }
-  */
   .navbar-header {
   	.navbar-toggle {
   		margin-top: 25px;
@@ -567,7 +566,14 @@ input, textarea, select, .uneditable-input {
 }
 
 .project-index {
-	.col-sm-4 {
+  h3 {
+    margin-right: 75%;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+	.col-sm-6 {
 		a {
 			color: $ubc_blue;
 		}
@@ -580,19 +586,26 @@ input, textarea, select, .uneditable-input {
 
 .project-show {
 	padding-top: 30px;
-	padding-bottom: 100px;
+  h4 {
+    font-variant: small-caps;
+  }
 	p {
 		a {
 			color: $rich_green;
 		}
 	}
 	.status {
-		margin-top: 20px;
-		margin-bottom: 20px;
-		padding: 5px 10px 10px 5px;
-		border: solid 2px gray;
-		border-radius: 3%;
+    font-style: italic;
 	}
+  .modal-footer {
+    .btn {
+      color: $ubc_blue;
+      &:hover {
+        background-color: $ubc_blue;
+        color: white;
+      }
+    }
+  }
 }
 
 /* ============================================
