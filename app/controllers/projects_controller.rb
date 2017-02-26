@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     end
 
     def index
-        @projects = Project.all
+        @projects = Project.all.order(:created_at)
     end
 
     def edit
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
       if @project.update_attributes(project_params)
         flash[:success] = "Project Updated!"
-        redirect_to @project
+        redirect_to projects_url
       else
         render 'edit'
       end
@@ -48,7 +48,8 @@ class ProjectsController < ApplicationController
         def project_params
             params.require(:project).permit(:title, :startDate, :endDate, 
                                             :volCap, :volNum, :githubPage, 
-                                            :description, :status, :project_url)
+                                            :description, :status, :project_url, 
+                                            :avatar)
         end
 
 end

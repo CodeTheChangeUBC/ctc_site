@@ -1,14 +1,21 @@
-<div class="col-sm-6">
-	<% description = project.description.to_s %>
-      <h3 data-toggle="modal" data-target="#info<%= project.id.to_s %>">
-      	<%= project.title %>
-      </h3>
-      <p><%= description[0..200] %>
-      	<% if description.length > 200 %>
-      	...
-      	<% end %>
-      </p>
-      <p>See the software <%= link_to "here", project.githubPage %></p>
+<div class="col-sm-4">
+	<div class="project-picture center">
+		<%= image_tag(project.picture) %>
+	</div>
+	<div class="project-desc">
+		<% description = project.description.to_s %>
+    <h4 data-toggle="modal" data-target="#info<%= project.id.to_s %>">
+    	<b><%= project.title %></b>
+    </h4>
+    <!-- <p><%= description[0..200] %>
+    	<% if description.length > 200 %>
+    	...
+    	<% end %>
+    </p> -->
+    <p id="software">See the software <%= link_to "here", project.githubPage %></p>	
+    <hr>
+	</div>
+	
 
 	<!-- Modal -->
 	<div id="info<%= project.id.to_s %>" class="modal fade container" role="dialog">
@@ -41,6 +48,7 @@
 	        <button type="button" class="btn-md btn" data-dismiss="modal">Close</button>
 	      </div>
 	    </div>
+	  </div>
+	</div>
 </div>
-
     

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128044444) do
+ActiveRecord::Schema.define(version: 20170226155245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161128044444) do
     t.text     "description"
     t.string   "status",      default: "In Progress"
     t.string   "project_url"
+    t.string   "avatar"
   end
 
 end

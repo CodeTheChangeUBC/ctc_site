@@ -81,20 +81,12 @@ class Member < ActiveRecord::Base
 
 	# Returns member profile picture
 	def picture
-	    if self.avatar?
-	      self.avatar.url
-	    else
-	      'generic_photo.jpg'
-	    end
+	    self.avatar? ? self.avatar.url : 'generic_photo.jpg'
   	end
 
   	def has_urls
   		a = self.url1 || self.url2 || self.github_url
-  		if !a.nil? and !a.empty?
-  			true
-  		else
-  			false
-  		end
+  		!a.nil? and !a.empty? ? true : false
   	end
 
     private 
