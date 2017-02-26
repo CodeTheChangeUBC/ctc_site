@@ -572,8 +572,8 @@ input, textarea, select, .uneditable-input {
     height: 120px;
     margin-bottom: 10px;
     h3, h4 {
-      -webkit-transition: background .4s, color .4s;
-      transition: background .4s, color .4s;
+      -webkit-transition: text-decoration .4s, color .4s;
+      transition: text-decoration .4s, color .4s;
       height: 60px;
       padding-top: 15px;
       margin-left: 75px;

@@ -1,7 +1,6 @@
 <% @projects.each do |project| %>
-	<li>
-		<p><%= link_to project.title, edit_project_path(project) %> 
+	<li><%= link_to project.title, edit_project_path(project) %> 
 		| <%= link_to "delete", project, method: :delete,
-                                  data: { confirm: "You sure?" } %></p></p>
+                                  data: { confirm: "You sure?" } %>
 	</li>
 <% end %>

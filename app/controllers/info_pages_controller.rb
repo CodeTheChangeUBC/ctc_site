@@ -8,8 +8,8 @@ class InfoPagesController < ApplicationController
   end
 
   def admin_panel
-  	@members = Member.where(admin: false)
-  	@projects = Project.all
+  	@members = Member.where(admin: false).order(:created_at)
+  	@projects = Project.all.order(:created_at)
   end
 
   def letsencrypt_root

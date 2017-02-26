@@ -4,9 +4,8 @@
 			fullName = fullName + " " + member.lastName
 		end 
 	%>
-	<li>
-		<p><%= link_to fullName, edit_member_path(member) %> 
+	<li><%= link_to fullName, edit_member_path(member) %> 
 		| <%= link_to "delete", member, method: :delete,
-                                  data: { confirm: "You sure?" } %></p>
+                                  data: { confirm: "You sure?" } %>
 	</li>
 <% end %>
