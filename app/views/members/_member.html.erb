@@ -18,7 +18,7 @@
 		        <h4 class="modal-title"><%= member.firstName %></h4>
 		      </div>
 		      <div class="modal-body">
-		        <p><%= member.about %></p>
+		        <p><%= markdown(member.about) %></p>
 		        <div class="container-fluid links">
 		        	<% if member.has_urls %>
 		        	<p> Here's where you can find <%= member.firstName %>:</p>	

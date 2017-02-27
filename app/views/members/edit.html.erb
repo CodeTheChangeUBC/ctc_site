@@ -18,7 +18,7 @@
       <% if @member.about.nil? or @member.about.empty? %>
         <p>Aww, tell us more!</p>
       <% else %>
-        <p><%= @member.about %></p>
+        <p><%= markdown(@member.about) %></p>
       <% end %>
 
       <% if admin? && !@member.admin %>
