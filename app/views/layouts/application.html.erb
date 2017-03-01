@@ -22,6 +22,7 @@
 </div>
 
 <% if request.path === '/' %>
+    <%= render 'layouts/home_header' %>
     <!-- Yield content from individual pages -->
     <%= yield %>
 <% else %>
