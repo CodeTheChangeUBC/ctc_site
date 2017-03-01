@@ -2,30 +2,18 @@
 <div id="homepage-content-wrapper">
 
   <!-- Intro Section -->
-  <div id="homepage-intro">
-    <div class="foreground">
-      <div class="gradient"></div>
-
-      <div id="homepage-intro-content">
-        <div id="intro-logo">
-          <%= image_tag('ctc-transparent.gif') %>
-        </div>
-
-        <div id="intro-text">
-          <h3>
-            Empowering non-profits through open source software. </br>
-            <span id="intro-arrow" class="glyphicon glyphicon-chevron-down" rel="2500"></span>
-          </h3>
-        </div>
-      </div>
-    </div>
+  <div class="container-fluid" id="homepage-intro">
+    <h1>Effecting Social Change with Technology</h1>
+    <h3>Code the Change empowers non-profits through open source software</h3>
+    <%= image_tag('ubc_logo.png') %><br>
   </div>
+
 
   <!-- About section -->
   <div id="homepage-about" class="container-fluid">
     <div class="row">
-      <div id="about-title" class="fade-in1">
-        <h1>Learn More</h1>
+      <div class="col-sm-8 col-sm-offset-2" id="about">
+        <h3> <b id="ctc">Code the Change UBC</b> helps change the world one software project at a time. We believe in the powerful combination of students' passion and technical skills with the vision and knowledge of philanthropic organizations.</h3>
         <hr>
       </div>
 
@@ -59,8 +47,29 @@
 
   <!-- Contact section -->
   <div id="homepage-contact">
-    <h1>Interested?</h1>
-    <button class="btn contact-btn"> Contact Us </button>
-    <h3 id="hide"><a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a> </h3>
+    <div class="container-fluid">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h3>Interested? We'd love to chat about interesting problems, cool initiatives, or a possible collaboration - feel free to get in touch!</h3>  
+      </div>
+    </div>
+    <button class="btn contact-btn" data-toggle="modal" data-target="#contactUs"> Contact Us </button>
+    <!-- <h3 id="hide"><a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a> </h3> -->
+    
+    <!-- Modal -->
+    <div id="contactUs" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <p>You can find more immediate information on our <%= link_to 'about page', about_path %>. If you're a student interested in joining (or an alumni) please include your year level, program and experience level.  
+            </p>
+            <p>Email: <a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

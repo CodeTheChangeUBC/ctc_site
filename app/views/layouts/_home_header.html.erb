@@ -1,0 +1,31 @@
+<!-- Global Header -->
+<div class="global_header">
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <%= link_to image_tag('ctc', alt: 'Code the Change UBC', size: '105x50'), root_path, id: 'logo', class: 'navbar-brand' %>
+                </div>
+                <div class="collapse navbar-collapse" id="headerNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><%= link_to 'About', about_path %></li>
+                        <li><%= link_to 'Projects', projects_path %></li>
+                        <li><%= link_to 'Team', members_path %></li>
+                        <% if admin? %>
+                            <li><%= link_to 'Admin Panel', admin_panel_path %></li>
+                        <% end %>
+                        <% if logged_in? %>
+                            <li class="member-name"><%= link_to 'Edit account', edit_member_path(current_member) %></li>
+                        <% else %>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
