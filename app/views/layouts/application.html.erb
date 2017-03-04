@@ -27,10 +27,10 @@
     <%= yield %>
 <% else %>
     <%= render 'layouts/header' %>
-    <div id="navbar-offset">
-      <!-- Yield content from individual pages -->
-      <%= yield %>
-    </div>
+    
+    <!-- Yield content from individual pages -->
+    <%= yield %>
+  
 <% end %>
 
 <!-- Enable debug environment if in development environment -->

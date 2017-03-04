@@ -143,45 +143,6 @@ input, textarea, select, .uneditable-input {
 ============== HEADER ========================
 ==============================================*/
 
-.global_header {
-  .navbar {
-    background-color: rgba(255,255,255,0.8);
-    border-bottom: 2px solid gray;
-    height: $navbar_height;
-    .navbar-brand {
-      padding: 0 0 0 20px;
-    }
-    #logo {
-      padding-top: 10px;
-      float: left;
-    }
-    .navbar-nav li a {
-      padding-top: 25px;
-      color: $ubc_blue;
-      font-weight: bold;
-    }
-    .navbar-collapse {
-      @media only screen and (max-device-width: 640px) {
-        background-color: white;
-      }
-    }
-    .navbar-nav li a:hover,
-    .navbar-nav li a:focus {
-      background-color: rgba(255,255,255,0);
-      text-decoration: underline;
-      color: $ubc_blue;
-      opacity: 0.8;
-    }
-    .navbar-header {
-      .navbar-toggle {
-        margin-top: 25px;
-      }
-      .icon-bar {
-        background-color: black;
-      }
-    }
-  } 
-}
 
 .main-page-header {
   height: 50px;
@@ -212,7 +173,9 @@ input, textarea, select, .uneditable-input {
     }
     .navbar-brand {
       img {
-        margin-top: -10px;
+        margin-top: -15px;
+        width: 100px;
+        height: auto;
       }
     }
     .navbar-toggle {
@@ -242,6 +205,51 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
+
+.global_header {
+  .navbar {
+    background-color: rgba(255,255,255,0.8);
+    li {
+      a {
+        color: $ubc_blue;
+        &:hover {
+          color: $ubc_blue;
+          text-decoration: underline;
+        }
+      }
+      .link {
+        background-color: $ubc_blue;
+        border: 1px solid $ubc_blue;
+        &:hover {
+          background-color: white;
+          a {
+            color: $ubc_blue;
+            text-decoration: none;
+            color: $ubc_blue;
+          }
+        }
+      }
+    }
+    .navbar-toggle {
+      border-color: $ubc_blue;
+      .icon-bar {
+        height: 4px;
+        border-radius: 3px;
+        background-color: $ubc_blue
+      }
+    }
+    .navbar-header, 
+    .navbar-collapse {
+      @media (min-width: 641px) {
+        margin-right: 0px;
+        margin-left: 0px;
+        padding-left: 50px;
+        padding-right: 50px;  
+      }      
+    } 
+  }
+}
+
 
 /* ============================================
 ================== FOOTER =====================

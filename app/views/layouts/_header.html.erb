@@ -1,5 +1,5 @@
 <!-- Global Header -->
-<div class="global_header">
+<div class="global_header main-page-header">
     <header>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <%= link_to image_tag('ctc', alt: 'Code the Change UBC', size: '105x50'), root_path, id: 'logo', class: 'navbar-brand' %>
+                    <%= link_to image_tag('ctc-transparent.gif', alt: 'Code the Change UBC'), root_path, id: 'logo', class: 'navbar-brand' %>
                 </div>
                 <div class="collapse navbar-collapse" id="headerNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -22,7 +22,7 @@
                         <% if logged_in? %>
                             <li class="member-name"><%= link_to 'Edit account', edit_member_path(current_member) %></li>
                         <% else %>
-                        <% end %>
+                        <% end %> 
                     </ul>
                 </div>
             </div>
