@@ -52,29 +52,31 @@
         <h3>Interested? We'd love to chat about interesting problems, cool initiatives, or a possible collaboration - feel free to get in touch!</h3>  
       </div>
     </div>
-    <button class="btn contact-btn" data-toggle="modal" data-target="#contactUs"> Contact Us </button>
+    <div id="homepage-contact-contact-div">
+        <button class="btn contact-btn" data-toggle="modal" data-target="#contactUs"> Contact Us </button>
+    </div>
+    <div id="homepage-contact-subscribe-div">
+        <%= form_for @subscriber, url: {action: "subscribe"}, html: {remote: true, id: "subscriber-form", class: "form-inline subscriber-form"} do |f| %>
+            <%=f.text_field :email %>
+            <%= f.submit "Subscribe to Mailing List", :class => 'btn subscribe-btn'%>
+        <% end %>
+    </div>
     <!-- <h3 id="hide"><a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a> </h3> -->
     
     <!-- Modal -->
     <div id="contactUs" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <p>You can find more immediate information on our <%= link_to 'about page', about_path %>. If you're a student interested in joining (or an alumni) please include your year level, program and experience level.  
-            </p>
-            <p>Email: <a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a>
-            </p>
-          </div>
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p>You can find more immediate information on our <%= link_to 'about page', about_path %>. If you're a student interested in joining (or an alumni) please include your year level, program and experience level.  
+                    </p>
+                    <p>Email: <a href="mailto:codethechangeubc@gmail.com">codethechangeubc@gmail.com</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div id="homepage-contact-subscribe-div">
-    <%= form_for @subscriber, url: {action: "subscribe"}, html: {remote: true, id: "subscriber-form", class: "form-inline subscriber-form"} do |f| %>
-        <%=f.text_field :email %>
-        <%= f.submit "Subscribe"%>
-    <% end %>
     </div>
   </div>
 </div>

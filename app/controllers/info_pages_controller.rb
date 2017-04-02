@@ -23,7 +23,7 @@ class InfoPagesController < ApplicationController
           @subscriber = existing_sub
       end
 
-      if @subscriber
+      if @subscriber.valid?
           mail = SubscriberMailer.welcome_email(@subscriber)
           puts mail
           redirect_to root_url
