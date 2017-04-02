@@ -14,15 +14,23 @@ class InfoPagesController < ApplicationController
   end
 
   def subscribe
-      @subscriber = Subscriber.create(email: params[:subscriber][:email])
-      if @subscriber.valid?
+      existing_sub = Subscriber.where(email: params[:subscriber][:email]).first
+      
+      if not existing_sub
+          @subscriber = Subscriber.create(email: params[:subscriber][:email])
+
+      else
+          @subscriber = existing_sub
+      end
+
+      if @subscriber
           mail = SubscriberMailer.welcome_email(@subscriber)
           puts mail
           redirect_to root_url
           flash[:success] = "Thanks for subscribing!"
       else
           redirect_to root_url
-          flash[:warning] = "Couldn't sign you up. Try again?"
+          flash[:warning] = "Couldn't sign you up. Try again? If you are having troubles, send us an email at info@codethechangeubc.org"
       end
   end
 
