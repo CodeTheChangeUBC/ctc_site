@@ -4,6 +4,11 @@ class Member < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 	validates :firstName,  presence: true, length: { maximum: 50 }
 	validates :lastName, length: { maximum: 50 }
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i		
+    validates :email, length: { maximum: 255 },		
+        format: { with: VALID_EMAIL_REGEX },		
+        uniqueness: { case_sensitive: false }, 		
+        allow_nil: true
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
     validates :subscriber_id, presence: true
@@ -45,6 +50,7 @@ class Member < ActiveRecord::Base
 						uid: auth["uid"],
 						firstName: firstName,
 						lastName: lastName,
+                        email: auth["info"]["email"],
 						github_url: github_url,
 						password: password,
 						password_confirmation: password,
