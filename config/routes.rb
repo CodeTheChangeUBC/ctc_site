@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get    '/home/unmake_exec',       to: 'members#unmake_exec'
 
   # SSL URL
-  get '/.well-known/acme-challenge/y1mqN6xANw3wHy3gxpmhvT0jb80F1DG1QkUYeE3JnpQ', to:
+  get '/.well-known/acme-challenge/:id', to:
       'info_pages#letsencrypt_root'
 
   resources :projects, except: [:show]
