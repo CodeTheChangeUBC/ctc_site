@@ -49,6 +49,7 @@
         <%= f.email_field :email, placeholder: '(Required)' %>
         <%= f.label :a_little_about_you %>
         <%= f.text_area :about, rows: "5"%>
+        <p id="mkdown" class="center"><small class='center'><%= markdown('Formatting: \*\***bold**\*\*  \__italics_\_  `` `code` `` \> block quote ')%></small></p>
         <%= f.label :personal_urls %>
         <p><small>GitHub</small></p>
         <%= f.text_field :github_url %>

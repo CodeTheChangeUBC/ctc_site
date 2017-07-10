@@ -31,7 +31,7 @@
 	              data: { confirm: "Are you sure you want to delete this project? "} %>
 			<% end %>
 			<p>
-			    <%= project.description %>
+			    <%= markdown(project.description) %>
 			</p>
 			<p>You can see the software for the project <%= link_to "here", project.githubPage %>
 				<% if !project.project_url.nil? and !project.project_url.empty? %>

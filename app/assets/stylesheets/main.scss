@@ -561,6 +561,9 @@ input, textarea, select, .uneditable-input {
 				background-color: $ubc_blue;
 			}
 		}
+    #mkdown {
+      margin-top: -25px;
+    }
 	}
 	.avatar {
 		padding-top: 20px;
@@ -674,6 +677,9 @@ input, textarea, select, .uneditable-input {
 			color: white;
 		}
 	}
+  #mkdown {
+    margin-top: -25px;
+  }
 }
 
 
