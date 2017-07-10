@@ -18,7 +18,17 @@
 		        <h4 class="modal-title"><%= member.firstName %></h4>
 		      </div>
 		      <div class="modal-body">
-		        <p><%= markdown(member.about) %></p>
+		      	<% if admin? %>
+					<%= link_to "Edit Member", edit_member_path(member) %> |
+		        	<%= link_to "Delete Member", member,
+		              method: :delete, 
+		              data: { confirm: "Are you sure you want to delete this member? "} %>
+				<% end %>
+				<% if member.has_about %>
+		        	<p><%= markdown(member.about) %></p>
+		        <% else %>
+		        	<p id="shy">It looks like <%= member.firstName %> is a little shy. That's ok, we love them anyways! </p>
+		        <% end %>
 		        <div class="container-fluid links">
 		        	<% if member.has_urls %>
 		        	<p> Here's where you can find <%= member.firstName %>:</p>	

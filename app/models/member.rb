@@ -89,6 +89,10 @@ class Member < ActiveRecord::Base
   		!a.nil? and !a.empty? ? true : false
   	end
 
+  	def has_about
+  		!self.about.nil? and !self.about.empty? ? true : false
+  	end
+
     private 
 
 	    # Converts email to lowercase 
