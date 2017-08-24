@@ -13,7 +13,7 @@ class InfoPagesController < ApplicationController
   end
 
   def letsencrypt_root
-      render text: params[:id]+".0GM4_z-mhql54qbjUbiWd0p64BSsBATYPcsPcySPVxU"
+      render text: params[:id]+".rxjz4-RTEq-DICUVh94-4TxE7VZ--PIPRN8tMB2OkVI"
   end
 end
 
