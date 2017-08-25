@@ -30,16 +30,6 @@
                                     <% end %>
                                <% end %>
                         </li>
-                        
-                        <li id='social-link'><%= link_to image_tag('linkedin', size: '25x25'), 'https://www.linkedin.com/company-beta/18145418/'%>
-                        </li>
-                        <li id='social-link'><%= link_to image_tag('github_small', size: '25x25'), 'https://github.com/CodeTheChangeUBC'%>
-                        </li>
-                        <li id='social-link'><%= link_to image_tag('fbook', size: '25x25'), 'https://www.facebook.com/codethechangeubc/'%>
-                        </li>
-                        
-                        
-                        
                         <% if admin? %>
                             <li><%= link_to 'Admin Panel', admin_panel_path %></li>
                         <% end %>
@@ -47,6 +37,14 @@
                             <li class="member-name"><%= link_to 'Edit account', edit_member_path(current_member) %></li>
                         <% else %>
                         <% end %> 
+                        <li id='social-link'><%= link_to image_tag('linkedin', size: '20x20'), 'https://www.linkedin.com/company-beta/18145418/'%>
+                        </li>
+                        <li id='social-link'><%= link_to image_tag('github_small', size: '20x20'), 'https://github.com/CodeTheChangeUBC'%>
+                        </li>
+                        <li id='social-link'><%= link_to image_tag('fbook', size: '20x20'), 'https://www.facebook.com/codethechangeubc/'%>
+                        </li>
+                        <li id='social-link'><%= link_to image_tag('email', size: '25x20'), 'mailto:info@codethechangeubc.org'%>
+                        </li>                                                
                     </ul>
                 </div>
             </div>

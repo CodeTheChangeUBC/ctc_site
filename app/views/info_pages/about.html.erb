@@ -2,41 +2,57 @@
 
 <div class="container-fluid about-jumbotron">
 	<div class="container-fluid fill center">
-		<h2><b>We believe in the power of code to change the world.</b></h2>	
+		<h2><b>We believe in the power of <span id='emph'>code</span> to <span id='emph'>change</span> the world.</b></h2>	
 	</div>
 </div>
 
 <div class="container-fluid about-page">
 	<div class="container-fluid about_1">
 		<div class="container col-sm-8 col-sm-offset-2 center">
-			<h2>Who are we?</h2>
-			<h4>Code the Change began as a student organization at Stanford University founded by Sam King. Since then, multiple chapters have popped up around North America. We are the CTC chapter at the University of British Columbia - a passionate group of students using our technical skills to effect social change. We are mainly comprised of computer scientists and engineers, although our member base includes business, science and art students. </h4>
+			<h2>Who?</h2>
+			<h4>Code the Change began in 2009 as a student organization at Stanford University. Since then, multiple chapters have opened around North America. We are the CTC chapter at the University of British Columbia - a passionate group of students using our technical skills to effect social change. We are mainly comprised of computer scientists and engineers, although our member base includes business, science and art students. This chapter was founded in 2016. </h4>
 		</div>
 	</div>
 
 	<div class="container-fluid about_2">
 		<div class="col-sm-8 col-sm-offset-2 center"> 
-			<h2>What do we do?</h2>
-			<h4>Our primary goal is to develop free, open source software for non-profit organizations and initiatives. We recognize the importance of working with organizations with expertise in an area in order to develop effective solutions. 
+			<h2>What?</h2>
+			<h4>Our primary goal is to develop free, open source software for non-profit organizations. We provide them with the tools they need in order to do the most effective job possible. 
 			We are interested in a wide range of issues and enthusiastic about applying a wide range of technologies. You can find the software for our projects 
 			<%= link_to "here", 'https://github.com/CodeTheChangeUBC' %>. </h4>
-			<h4>In addition to working with non-profits, we develop in house projects proposed by our members. In doing so, we allow students to target specific issues about which they feel passionate while also gaining real world problem solving experience. 
-			Furthermore, we participate in local hackathons and aim to develop projects geared towards social change.</h4>
+			<h4>In addition to working with non-profits, we develop in house projects proposed by our members. In doing so, we allow students to target specific issues about which they are passionate while also gaining real world software development experience. If you are a student with an idea for a project, we'd love to <%= link_to 'hear from you', '/#homepage-contact'%>!</h4>
 		</div>
 	</div>
 
-	<div class="container-fluid about_3">
-		<div class="col-sm-8 col-sm-offset-2 tagline">
-			<div class="col-sm-4 center">
-				<%= image_tag ('team2.jpg'), size: "200x150" %>
-			</div>
-			<div class="col-sm-8">
-				<h3>We help bridge the gap between school and making a practical difference in the world.</h3>
-			</div>
+	<div class='container-fluid about_1'>
+		<div class='col-sm-8 col-sm-offset-2 center'>
+			<h2>Why?</h2>
+			<h4> We believe that software isn't a way to solve social issues in and of itself. Rather, its power is in supporting organizations who already have the relevant expertise in a given area - whether homelessness, abuse, or education. 
+			<h4>
+			<h4>	
+				Furthermore, by helping students use their skills to solve current and substantial problems we hope to empower and encourage the next generation of philanthropists. Students often assume that completing an undergraduate degree in a technical field leads to a future filled with IT work and a barrage of domain specific technical problems. Our goal is to show students that their work can have significant social impact, and that many organizations working outside of tech require their support. 
+			</h4>
 		</div>
+	</div>
+
+	<div class='container-fluid about-break'>
+		<h2>
+			We help bridge the gap between school and making a practical difference in the world.
+		</h2>
+
+	</div>
+
+	<div class="container-fluid about_3">
 		<div class="col-sm-6 col-sm-offset-3 center">
+			<h2>FAQs for Partners</h2>
+			<h3>How long does a project take?</h3>
+			<h4>Typically 6-8 months depending on the scope of the project. This estimate includes the ideation phase all the way to the final handoff. Unfortunately we do not have the same resources that a for-profit company might, and since our members are students they cannot contribute to the project full-time.</h4>
+			<h3>Do you take on every project?</h3>
+			<h4>As much as we would like to commit to everything we can only take on those projects which garner sufficient interest among our members. A team working on a project is required to have a minimum number of senior engineers to ensure its success. If this requirement can't be met, we waitlist the project and re-propose it in a few months if the partner organization remains interested.</h4>
+			<hr>
+			<h2 id='faq'>FAQs for Students</h2>
 			<h3>How can I join?</h3>
-			<h4>We hold Code Nights on Tuesdays at UBC at six pm in DMP (Hugh Dempster Pavilion) 201. You can swing by there and chat with an exec or send us a <%= link_to "message", 'mailto:codethechangeubc@gmail.com' %> directly. </h4>
+			<h4>We hold Code Nights on Tuesdays at UBC at six pm in DMP (Hugh Dempster Pavilion) 201. You can swing by there and chat with an exec or send us a <%= link_to "message", 'mailto:info@codethechangeubc.org' %> directly. </h4>
 			<h3>How does contributing work?</h3>
 			<h4>Each project has a team lead who is in charge (sometimes co-leads) of ensuring that the deadlines for the project are met. The project lead also maintains an outline on GitHub which tracks the project's progress, what's been done, and what is still to do. Here, developers can find tasks along with an estimate of how long they will take to accomplish. Team sizes are capped at a certain number - usually 3-5 depending on the project. To be a developer on a project, you don't have to be able to attend every code night. It's more important to follow through with the tasks you're assigned, even if you write most of your code from home. Of course, it's nice to be face to face with your team if possible! If you're stuck on a task, you can always ask your project lead or one of the software leads for help. </h4>
 			<h3>Do I have to know how to code?</h3>

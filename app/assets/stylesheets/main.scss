@@ -143,69 +143,6 @@ input, textarea, select, .uneditable-input {
 ============== HEADER ========================
 ==============================================*/
 
-
-.main-page-header {
-  height: 50px;
-  .navbar {
-    background-color: rgba(255,255,255,0);
-    li {
-      padding-right: 20px;
-      /*text-transform: uppercase;
-      font-size: 0.9em;*/
-      .link {
-        -webkit-transition: background .4s, color .4s;
-        transition: background .4s, color .4s;
-        padding: 5px 10px 5px 10px;
-        margin-top: 9px;
-        border: 1px solid white;
-        border-radius: 5px;
-        a {
-          color: white;
-        }
-        &:hover {
-          background-color: white;
-          a {
-            color: $ubc_blue;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-    .navbar-brand {
-      img {
-        margin-top: -15px;
-        width: 100px;
-        height: auto;
-      }
-    }
-    .navbar-toggle {
-      border-color: white;
-      .icon-bar {
-        height: 4px;
-        border-radius: 3px;
-        background-color: white;
-      }
-    }
-
-    .navbar-header, 
-    .navbar-collapse {
-      @media (min-width: 641px) {
-        margin-right: 0px;
-        margin-left: 0px;
-        padding-left: 100px;
-        padding-right: 100px;  
-      }      
-    } 
-     .navbar-collapse {
-      .navbar-nav {
-        @media only screen and (max-device-width: 640px) {
-        margin-top: -3px;
-        }
-      }
-    }
-  }
-}
-
 .global_header {
   height: 80px;
   .navbar {
@@ -214,7 +151,9 @@ input, textarea, select, .uneditable-input {
     padding-top: 13px;
     border-color: white;
     #social-link {
-      padding-right: 10px;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-top: 2px;
       a {
         padding: 0;
         -webkit-transition: opacity .3s;
@@ -253,6 +192,13 @@ input, textarea, select, .uneditable-input {
         }
       }
     }
+    .navbar-brand {
+      img {
+        margin-top: -15px;
+        width: 100px;
+        height: auto;
+      }
+    }
     .navbar-toggle {
       border-color: $ubc_blue;
       .icon-bar {
@@ -260,16 +206,26 @@ input, textarea, select, .uneditable-input {
         border-radius: 3px;
         background-color: $ubc_blue
       }
+      &:focus {
+        background-color: white;
+      }
     }
     .navbar-header, 
     .navbar-collapse {
-      @media (min-width: 641px) {
+      @media (min-width: 769px) {
         margin-right: 0px;
         margin-left: 0px;
         padding-left: 50px;
         padding-right: 50px;  
-      }      
-    } 
+        background: white;
+      }
+    }
+    #headerNavbar {
+      border-color: white;
+      background-color: white;
+    }
+
+
   }
 }
 
@@ -465,20 +421,20 @@ input, textarea, select, .uneditable-input {
 ==============================================*/
 
 .about-jumbotron {
-  background: image-url('code1.jpg');
+  background: image-url('ubc3.jpg');
   background-size: cover;
+  background-attachment: fixed;
   height: 300px;
   padding-left: 0;
   padding-right: 0;
-  .fill {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.6);
-    h2 {
-      padding-top: 10%;
+  h2 {
+    padding-top: 11%;
+    color: white;
+    #emph {
+      color: lightgreen;
     }
-
   }
+
 }
 
 .about-page {
@@ -487,6 +443,9 @@ input, textarea, select, .uneditable-input {
   .about_1 {
     padding-top: 5%;
     padding-bottom: 5%;
+    h4 {
+      color: gray;
+    }
     h2 {
       color: $ubc_blue;
     }
@@ -494,28 +453,41 @@ input, textarea, select, .uneditable-input {
   .about_2 {
     padding-top: 5%;
     padding-bottom: 5%;
-    background-color: $ubc_blue;
+    background-color: lightgray;
     color: white;
+    h2 {
+      color: $ubc_blue;
+    }
+    a {
+      color: $ubc_blue;
+    }
+  }
+  .about-break {
+    height: 400px;
+    background-image: image-url('team4.jpg');
+    background-size: cover;
+    h2 {
+      text-align: center;
+      color: white;
+      padding-top: 9%;
+    }
   }
   .about_3 {
-    padding-top: 4%;
+    padding-top: 20px;
     padding-bottom: 3%;
-    .tagline {
-      padding-bottom: 20px;
-      border-bottom: solid 2px $light_gray;
-      h3 {
-        padding-top: 10px;
-        color: gray;
-      }
-      img {
-        border-radius: 50%;
-      }
+    h2 {
+      padding-top: 20px;
+      text-align: center;
+      color: $ubc_blue;
     }
     .col-sm-6 {
       text-align: justify;
       padding-top: 5%;
-      h2, h3 {
+      h3 {
         color: gray;
+      }
+      a {
+        color: $ubc_blue;
       }
     }
   }
@@ -634,6 +606,7 @@ input, textarea, select, .uneditable-input {
 	background-size: cover;
 	height: 300px;
 	h2 {
+    color: white;
 		padding-top: 100px;
 	}
 }
