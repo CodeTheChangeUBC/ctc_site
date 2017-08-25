@@ -12,10 +12,34 @@
                     <%= link_to image_tag('ctc-transparent.gif', alt: 'Code the Change UBC'), root_path, id: 'logo', class: 'navbar-brand' %>
                 </div>
                 <div class="collapse navbar-collapse" id="headerNavbar">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
                         <li><%= link_to 'About', about_path %></li>
                         <li><%= link_to 'Projects', projects_path %></li>
                         <li><%= link_to 'Team', members_path %></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><% if !current_member %>
+                              <%= link_to login_path do %>
+                                      <span class="glyphicon glyphicon-user"></span>
+                                      Login
+                                  <% end %>
+                              <% else %>
+                                <%= link_to(logout_path, method: 'delete') do %>
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        Logout
+                                    <% end %>
+                               <% end %>
+                        </li>
+                        
+                        <li id='social-link'><%= link_to image_tag('linkedin', size: '25x25'), 'https://www.linkedin.com/company-beta/18145418/'%>
+                        </li>
+                        <li id='social-link'><%= link_to image_tag('github_small', size: '25x25'), 'https://github.com/CodeTheChangeUBC'%>
+                        </li>
+                        <li id='social-link'><%= link_to image_tag('fbook', size: '25x25'), 'https://www.facebook.com/codethechangeubc/'%>
+                        </li>
+                        
+                        
+                        
                         <% if admin? %>
                             <li><%= link_to 'Admin Panel', admin_panel_path %></li>
                         <% end %>

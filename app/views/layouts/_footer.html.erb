@@ -1,31 +1,7 @@
  <footer id="footer">
-  <div id="connect">
-    <p>
+  <div class='container'>
+      &copy; <%= Time.now.year %>, Code the Change - UBC Chapter 
       <%=link_to 'Contact Us', '/#homepage-contact' %>
-      &middot;
-      <%= link_to image_tag('facebook_small', size: '30x30'), 'https://facebook.com/codethechangeubc' %>
-      &middot;
-      <%= link_to image_tag('github_small', size: '30x30'), 'https://github.com/CodeTheChangeUBC' %>
-      &middot;
-      <%= link_to image_tag('linkedin-logo', size: '30x30'), 'https://www.linkedin.com/company-beta/18145418' %>
-      &middot;
       <%= link_to 'Parent Organization', 'https://codethechange.org' %>
-    </p>
-  </div>
-  <div id="login" class="center">
-    <% if !current_member %>
-      <%= link_to login_path do %>
-              <span class="glyphicon glyphicon-user"></span>
-              Login
-          <% end %>
-      <% else %>
-        <%= link_to(logout_path, method: 'delete') do %>
-                <span class="glyphicon glyphicon-user"></span>
-                Logout
-            <% end %>
-       <% end %>
-  </div>
-  <div id="copyright">
-    <p>&copy; <%= Time.now.year %>, Code the Change - UBC Chapter</p>
   </div>
 </footer>
