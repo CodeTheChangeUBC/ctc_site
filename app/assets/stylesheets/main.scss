@@ -37,6 +37,9 @@ $rich_green: #00cc00;
 $footer_height: 150px;
 $navbar_height: 80px;
 $min_desktop_width: 768px;
+$max_mobile_width: 767px; 
+$max_tablet_width: 1024px;
+
 
 
 @mixin box_sizing {
@@ -297,11 +300,6 @@ input, textarea, select, .uneditable-input {
     }
   }
 
-  .about-box {
-    padding: 20px;
-    height: auto;
-    width: auto;
-  }
 
   .about-grid {
     .col-sm-6 {
@@ -310,46 +308,78 @@ input, textarea, select, .uneditable-input {
     }
     h3 {
       width: 100%;
-      padding-top: 20px;
-      text-align: left;
       color: white;
-
     }
 
     #tile-1 {
       background-image: image-url("mboard2.jpeg");   
-      height: 501px;
-      h3 {
-        padding-top: 55px; 
-        padding-left: 15px;
-        padding-right: 200px;
-      }
-      .btn {
-        margin-left: 15px;
-        margin-top: 30px;
-      }
     }
     #tile-2 {
       background-image: image-url("team.JPG");
       background-position: 0px -100px;
       background-size: 600px;
-      height: 250px;
-      margin-bottom: 1px;
     }
     #tile-3 {
       background-image: image-url("team1.jpg");
       background-size: 620px;
-      height: 250px;
     }
-    .btn {
-      margin-top: 30px;
-      float: left;
+
+    @media (min-width: $min_desktop_width) {
+      h3 {
+        padding-top: 20px;
+        text-align: left;
+      }
+      #tile-1 {
+        height: 501px;
+        h3 {
+          padding-top: 55px; 
+          padding-left: 15px;
+          padding-right: 200px;  
+        }
+        .btn {
+          margin-left: 15px;
+          margin-top: 30px; 
+        }
+      }
+      #tile-2 {
+        height: 250px;
+        margin-bottom: 1px;
+      }
+      #tile-3 {
+        height: 250px;
+      }
+      .btn {
+        margin-top: 30px;
+        float: left;  
+      }
     }
+
+    @media (max-width: $max_mobile_width) {
+      h3 {
+        padding-top: 20px;
+        text-align: center;
+      }
+      .btn {
+        margin-top: 10px;
+        float: center;
+      }
+      #tile-1, #tile-2, #tile-3 {
+        height: 300px;
+      }
+      #tile-1 h3 {
+        padding: 35px 5px 0 5px;
+      }
+    }
+
   }
 }
 
 .keywords {
   height: 400px;
+  /* Change height for phones and ipads */
+  @media (max-width: $max_tablet_width) {
+    height: 510px;
+  }
   background-image: image-url('bigteam.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -361,16 +391,17 @@ input, textarea, select, .uneditable-input {
   #tags {
     margin-top: 5%;
     margin-bottom: 3%;
-    text-align: center;
     ul {
-
-      /*list-style: none;*/
+      padding-left: 0px;  
       li {
         list-style: none;
-        display: inline;
         padding: 5px 13px 13px 5px;
         color: white;
         font-size: 20pt;
+        /* Inline words for laptops and desktops */
+        @media (min-width: $max_tablet_width) {
+          display: inline;  
+        }
       }
     }
   }

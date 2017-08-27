@@ -9,34 +9,22 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-<!-- Render error messages for forms (if any) -->
-<div id="error-container">
-  <div class="container">
-    <% flash.each do |message_type, message| %>
-        <div class="alert alert-dismissible alert-<%= message_type %>">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <%= message %>
-        </div>
-    <% end %>
+  <!-- Render error messages for forms (if any) -->
+  <div id="error-container">
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-dismissible alert-<%= message_type %>">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%= message %>
+          </div>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<% if request.path === '/s' %>
-    <%= render 'layouts/home_header' %>
-    <!-- Yield content from individual pages -->
-    <%= yield %>
-<% else %>
-    <%= render 'layouts/header' %>
-    
-    <!-- Yield content from individual pages -->
-    <%= yield %>
-  
-<% end %>
-
-<!-- Enable debug environment if in development environment -->
-<!-- <div class="container"> -->
-<!--<%= debug(params) if Rails.env.development? %>-->
-<!--</div>-->
-<%= render 'layouts/footer' %>
+  <!-- Render Header -->
+  <%= render 'layouts/header' %>
+  <!-- Yield content from individual pages -->
+  <%= yield %>
+  <!-- Render footer -->
+  <%= render 'layouts/footer' %>
 </body>
 </html>
