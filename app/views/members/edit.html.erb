@@ -64,6 +64,8 @@
         <% if admin? %>
           <%= f.label :position %>
           <%= f.text_field :position%>
+          <%= f.label :past_member? %>
+          <%= f.check_box :past_member %>
         <% end %>
         
         <strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %>

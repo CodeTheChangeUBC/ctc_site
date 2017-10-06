@@ -79,6 +79,16 @@ class Member < ActiveRecord::Base
 		update_attribute(:exec, false)
 	end
 
+	# Make this member a past member
+	def make_past_member
+		update_attribute(:past_member, true)
+	end
+
+	# Make a past member a current member
+	def make_current_member
+		update_attribute(:past_member, false)
+	end
+
 	# Returns member profile picture
 	def picture
 	    self.avatar? ? self.avatar.url : 'generic_photo.jpg'

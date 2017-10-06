@@ -18,8 +18,12 @@ class MembersController < ApplicationController
   end
 
   def index
-      @execs = Member.where(exec: true, admin: false).order(:created_at)
-      @members = Member.where(exec: false, admin: false).order(:created_at)
+      @execs = Member.where(past_member: false, exec: true, admin: false).order(:created_at)
+      @members = Member.where(past_member: false, exec: false, admin: false).order(:created_at)
+  end
+
+  def past_members
+      @past_members = Member.where(past_member: true).order(:created_at).reverse_order;
   end
 
   def edit
@@ -68,6 +72,24 @@ class MembersController < ApplicationController
     redirect_back_or members_url
   end
 
+  def make_past_member
+    @member = Member.find(params[:member_id])
+    if @member.make_past_member
+      flash[:info] = "#{@member.firstName} is now a past member."
+    else 
+      flash[:warning] = "Sorry, something went wrong. Please try again."
+    end
+  end
+
+  def unmake_past_member
+    @member = Member.find(params[:member_id])
+    if @member.make_current_member
+      flash[:info] = "#{@member.firstName} is now a current member."
+    else 
+      flash[:warning] = "Sorry, something went wrong. Please try again."
+    end
+  end
+
 
   private
 
@@ -75,7 +97,7 @@ class MembersController < ApplicationController
           params.require(:member).permit(:firstName, :lastName, :studentNumber, 
                                           :email, :password, :password_cgonfirmation, 
                                           :avatar, :about, :url1, :url2, :github_url, 
-                                          :position)
+                                          :position, :past_member)
       end
 
 end

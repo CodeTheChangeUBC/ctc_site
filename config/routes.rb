@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Action URLS 
   get    '/home/make_exec',         to: 'members#make_exec'
   get    '/home/unmake_exec',       to: 'members#unmake_exec'
+  get    '/home/make_past_member',  to: 'members#make_past_member'
+  get    '/home/unmake_past_member',to: 'members#unmake_past_member'
 
   # SSL URL
   get '/.well-known/acme-challenge/:id', to:
