@@ -1,0 +1,17 @@
+<div class='container past-members center' >
+	<h2>Thank you to all our past developers!</h2>
+	<div id='member-list'>
+		<ul>
+			<% for member in @past_members %>
+				<li><%= member.firstName %> <%= member.lastName %>
+					<% if member.position != "Developer" %> 
+						(<%= member.position %>)
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+
+</div>
+

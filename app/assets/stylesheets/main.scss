@@ -595,7 +595,36 @@ input, textarea, select, .uneditable-input {
 			}
 		}
 	}
+  .past-url {
+    h2, h3 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      a {
+        color: $ubc_blue;
+      }
+    }
+  }
 }
+
+/* ============================================
+=============== PAST MEMBERS ==================
+==============================================*/
+
+.past-members {
+  padding-bottom: 100px;
+  h2 {
+    color: gray;
+    padding-bottom: 20px;
+  }
+  li {
+    list-style: none;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px; 
+
+  }
+}
+
 
 /* ============================================
 =============== MEMBER'S EDIT ==================
@@ -808,6 +837,11 @@ input, textarea, select, .uneditable-input {
 		}
 	}
 }
+
+
+
+
+
 
 
 

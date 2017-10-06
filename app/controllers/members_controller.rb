@@ -22,7 +22,7 @@ class MembersController < ApplicationController
       @members = Member.where(past_member: false, exec: false, admin: false).order(:created_at)
   end
 
-  def past_members
+  def past
       @past_members = Member.where(past_member: true).order(:created_at).reverse_order;
   end
 
@@ -44,10 +44,6 @@ class MembersController < ApplicationController
     Member.find(params[:id]).destroy
     flash[:success] = "Member deleted"
     redirect_back_or members_url
-  end
-
-
-  def delete
   end
 
   # Custom Actions 

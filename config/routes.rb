@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/admin',                     to: 'sessions#admin_new'
   get '/admin-panel',               to: 'info_pages#admin_panel'
   delete '/admin-panel',            to: 'info_pages#destroy'
+  get '/members/past',              to: 'members#past'
 
   # API URLS
   get '/auth/:provider/callback',   to: 'sessions#create_with_api'
