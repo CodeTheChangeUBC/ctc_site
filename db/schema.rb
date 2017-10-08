@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006022011) do
+ActiveRecord::Schema.define(version: 20171008013838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20171006022011) do
     t.string   "status",      default: "In Progress"
     t.string   "project_url"
     t.string   "avatar"
+    t.integer  "year",        default: 2017
   end
 
 end
