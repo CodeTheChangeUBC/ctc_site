@@ -672,6 +672,18 @@ input, textarea, select, .uneditable-input {
 }
 
 .project-index {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  .year-banner {
+    background-color: $ubc_blue;
+    color: white;
+    width: 100%;
+    h2 {
+      margin-left: 80px;
+    }
+  }
   .project-desc {
     height: 120px;
     margin-bottom: 10px;
@@ -693,16 +705,8 @@ input, textarea, select, .uneditable-input {
       width: 90%;
       padding-bottom: 10px;
     }
-    #software {
-      margin-left: 20px;
-      color: darkgray;
-      a {
-        color: $ubc_blue;
-        cursor: pointer;
-      }
-    }
   }
-	.col-sm-4 {
+	.col-sm-3 {
     padding-left: 0px;
     padding-right: 0px;
 		a {
@@ -710,6 +714,7 @@ input, textarea, select, .uneditable-input {
 		}
 	}
   .project-picture {
+    padding-top: 10px;
     img {
       width: 100%;
       height: 300px;
@@ -732,6 +737,13 @@ input, textarea, select, .uneditable-input {
 			color: $rich_green;
 		}
 	}
+  #software {
+    color: darkgray;
+    a {
+      color: $ubc_blue;
+      cursor: pointer;
+    }
+  }
 	.status {
     font-style: italic;
 	}

@@ -1,4 +1,4 @@
-<div class="col-sm-4">
+<div class="col-sm-3">
 	<div class="project-picture center">
 		<%= image_tag(project.picture) %>
 	</div>
@@ -7,7 +7,6 @@
     <h4 data-toggle="modal" data-target="#info<%= project.id.to_s %>">
     	<b><%= project.title %></b>
     </h4>
-    <p id="software">See the software <%= link_to "here", project.githubPage %></p>	
     <hr>
 	</div>
 	
@@ -33,7 +32,7 @@
 			<p>
 			    <%= markdown(project.description) %>
 			</p>
-			<p>You can see the software for the project <%= link_to "here", project.githubPage %>
+			<p id='software'>You can see the software for the project <%= link_to "here", project.githubPage %>
 				<% if !project.project_url.nil? and !project.project_url.empty? %>
 					and the project in use <%= link_to "here", project.project_url %>
 				<% end %>.
