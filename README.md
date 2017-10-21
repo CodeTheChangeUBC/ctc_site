@@ -7,7 +7,7 @@ Hi and welcome to the UBC Chapter of Code the Change's website project page. It 
 
 * Ruby version: 2.0.0
 
-* Rails version: 4.2.6
+* Rails version: >= 5.0.0
 
 * Deployment instructions: 
 	 - **Remotely** Heroku auto-deploys from production branch. Ensure this branch is always stable!
@@ -21,11 +21,5 @@ Hi and welcome to the UBC Chapter of Code the Change's website project page. It 
 	- To reset the database and reload the current database run `rake db:reset db:migrate`
 	- To destroy the database, create and migrate it run `rake db:reset db:migrate`
 	- After modifying the database, to run tests first run `rake db:test:prepare`
-
-### People ###
-Contributors: Graham Brown, Ben Chugg, Evan Waterman. 
-
-### How to contribute ###
-Grab an issue, fix it and submit a pull-request! We love you! No commit is too small. 
 
 
