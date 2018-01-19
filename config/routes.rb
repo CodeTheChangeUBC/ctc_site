@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :projects, except: [:show]
   resources :members, only: [:index, :new, :edit, :update, :create, :destroy]
+  resources :posts, except: [:show]
 end
 
   
