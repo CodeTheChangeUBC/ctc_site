@@ -672,6 +672,25 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
+.upcoming-projects {
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Gill Sans", sans-serif;
+    font-variant: none;
+    border-color: $ubc_blue;
+    &:hover {
+      background-color: $ubc_blue;
+      color: white;
+    }
+  }
+  margin-top: 20px;
+  margin-bottom: 30px;
+  h3,a {
+    color: $ubc_blue;
+  }
+}
+
 .project-index {
   padding-left: 0;
   padding-right: 0;
@@ -887,7 +906,6 @@ input, textarea, select, .uneditable-input {
       }
     }
   }
-
 }
 
 
