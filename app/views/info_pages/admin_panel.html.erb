@@ -4,16 +4,21 @@
 	<h2 class="center">Administration Panel</h2>
 	<p>Quick links: </br>
 	<%= link_to "(Manually) Create New Member", new_member_path %> </br>
-	<%= link_to "Create new project", new_project_path %>
+	<%= link_to "Create new project", new_project_path %> </br>
+	<%= link_to "Create new Post", new_post_path %>
 	</p>
 	
-	<div class="col-sm-6">
+	<div class="col-sm-4">
 		<h3>All Members</h3>
 		<%= render 'member_info', collection: @members %>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-4">
 		<h3>All Projects</h3>
 		<%= render 'project_info', collection: @projects %>
+	</div>
+	<div class="col-sm-4">
+		<h3>Upcoming Projects</h3>
+		<%= render 'post_info', collection: @posts %>
 	</div>
 	
 </div>

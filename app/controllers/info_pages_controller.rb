@@ -10,6 +10,7 @@ class InfoPagesController < ApplicationController
   def admin_panel
   	@members = Member.where(admin: false).order(:created_at)
   	@projects = Project.all.order(:created_at)
+    @posts = Post.all.order(:created_at).reverse_order
   end
 
   def letsencrypt_root
