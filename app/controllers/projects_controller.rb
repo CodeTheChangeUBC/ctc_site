@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
         @project = Project.new(project_params)
         if  @project.save
             redirect_to projects_url
-            flash[:success] = "Projected successfully created!"
+            flash[:success] = "Project successfully created!"
         else
             render :new
         end

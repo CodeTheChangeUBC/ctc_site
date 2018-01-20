@@ -4,13 +4,19 @@
     <h2><b>Here are some of the things we build.</b></h2>
 </div>
 
+<div class='center upcoming-projects'>
+	<%= link_to 'See our upcoming projects', posts_path, class: 'btn btn-primary' %>
+</div>
+
 <% (0..@projects_by_year.size-1).reverse_each do |i| %>
 	<div class='container-fluid project-index year-#{i+2016}'>
-		<div class='container year-banner'>
-			<h2><%= i+2016 %></h2>
-		</div>
-		<div class='container-fluid year-projects'>
-			<%= render(partial: "project", collection: @projects_by_year[i]) %>
-		</div>
+		<% if not @projects_by_year[i].empty? %>
+			<div class='container year-banner'>
+				<h2><%= i+2016 %></h2>
+			</div>
+			<div class='container-fluid year-projects'>
+				<%= render(partial: "project", collection: @projects_by_year[i]) %>
+			</div>
+		<% end %>
 	</div>
 <% end %>

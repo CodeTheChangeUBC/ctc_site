@@ -17,6 +17,7 @@
 	10. Project New
 	11. Login page
 	12. New Member page
+  13. Posts
 
 ##########################################################*/
 
@@ -61,9 +62,8 @@ html {
 }
 
 body {
-  min-height: 100%;
+  height: 100%;
   font-family: "Gill Sans", sans-serif;
-  //overflow-x: hidden;
   background-color: white;
 }
 
@@ -672,6 +672,25 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
+.upcoming-projects {
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Gill Sans", sans-serif;
+    font-variant: none;
+    border-color: $ubc_blue;
+    &:hover {
+      background-color: $ubc_blue;
+      color: white;
+    }
+  }
+  margin-top: 20px;
+  margin-bottom: 30px;
+  h3,a {
+    color: $ubc_blue;
+  }
+}
+
 .project-index {
   padding-left: 0;
   padding-right: 0;
@@ -854,6 +873,40 @@ input, textarea, select, .uneditable-input {
 }
 
 
+/* ============================================
+=============== POST CREATE ====================
+==============================================*/
+
+.create-post {
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .btn {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: $ubc_blue;
+    border-color: $ubc_blue;
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+.posts-index {
+  .no-projects {
+    margin-top: 50px;
+    color: grey;
+  }
+  .posts-list {
+    margin-bottom: 70px;
+    .post-container {
+      h3 {
+        color: $ubc_blue;
+      }
+    }
+  }
+}
 
 
 
