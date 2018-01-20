@@ -1,0 +1,18 @@
+<% provide(:title, 'New Post') %>
+
+<div class="container-fluid create-post">
+	<h2 class="center">
+		Create a new post
+	</h2>
+	<div class="col-md-6 col-md-offset-3">
+	    <%= form_for(@post) do |f| %>
+	      <%= render 'shared/error_messages', object: @post %>
+	      <%= f.label :title %>
+	      <%= f.text_field :title %>
+	      <%= f.label :text %>
+	      <%= f.text_area :text %>
+	      <p id="mkdown"><small><%= markdown('Formatting: \*\***bold**\*\*  \__italics_\_  `` `code` `` \> block quote ')%></small></p>
+	      <%= f.submit "Create this post!", class: "btn btn-primary" %>
+	    <% end %>
+	</div>
+</div>

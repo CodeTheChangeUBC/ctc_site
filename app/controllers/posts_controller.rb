@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     end
 
     def index
-    	@posts = Post.all.order(:created_at).reverse
+    	@posts = Post.all.order(:created_at).reverse_order
     end
 
     def edit

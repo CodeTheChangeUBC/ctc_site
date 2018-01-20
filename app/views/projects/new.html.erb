@@ -21,6 +21,7 @@
 	      <%= f.text_field :project_url %>
 	      <%= f.label :description %>
 	      <%= f.text_area :description, rows: "10" %>
+	      <p id="mkdown"><small><%= markdown('Formatting: \*\***bold**\*\*  \__italics_\_  `` `code` `` \> block quote ')%></small></p>
 	      <strong>Upload Picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %>
 	      <%= f.submit "Create this project!", class: "btn btn-primary" %>
 	    <% end %>
