@@ -10,7 +10,7 @@
 	      <%= f.label :title %>
 	      <%= f.text_field :title %>
 	      <%= f.label :text %>
-	      <%= f.text_area :text %>
+	      <%= f.text_area :text, rows: "10" %>
 	      <p id="mkdown"><small><%= markdown('Formatting: \*\***bold**\*\*  \__italics_\_  `` `code` `` \> block quote ')%></small></p>
 	      <%= f.submit "Create this post!", class: "btn btn-primary" %>
 	    <% end %>
