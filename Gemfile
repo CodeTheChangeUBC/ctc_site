@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails',                   '>= 5.0.0.rc2', '< 5.1'
 gem 'bcrypt',                  '3.1.11'
 # Use PostgreSQL as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
